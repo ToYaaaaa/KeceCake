@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  list-style-type: none;
+  --primary_btn: rgba(255, 107, 107, 1);
+  --bg_color: rgba(255, 247, 247, 1);
+  font-family: "poppins", sans-serif;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  height: 3.5rem;
+  align-items: center;
+  box-shadow: 0px 1.4px 2px black;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar .navbar-left {
+  font-size: 1.5rem;
+  padding: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.navbar .navbar-left span {
+  color: var(--primary_btn);
+}
+
+.navbar .navbar-middle ul li {
+  display: inline-block;
+  padding-left: 20px;
+}
+.navbar .navbar-middle ul {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .navbar-right ul li {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.navbar .navbar-right .btn-cart {
+  border: none;
+}
+.navbar .navbar-right ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* add product */
+.containerr {
+  width: 100%;
+  height: 92dvh;
+  background-color: var(--bg_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 3.6rem; */
+}
+
+.containerr .addproduct {
+  border: 0.1rem solid black;
+  border-radius: 25px;
+  width: 50%;
+  height: 32rem;
+}
+
+.containerr .top {
+  /* background-color: blue; */
+  width: 60%;
+  margin-left: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerr .addproduct h2 {
+  margin: 0.8rem;
+}
+
+.containerr .addproduct .formadd {
+  margin-top: 3rem;
+}
+
+.containerr .addproduct .formadd input,
+.label {
+  width: 90%;
+  margin: 0rem 1rem 0rem 1.5rem;
+}
+
+.containerr .addproduct .formadd .dropdown {
+  width: 15%;
+  margin-left: 1.5rem;
+}
+.containerr .addproduct .formadd .form-select {
+  width: 15%;
+  margin-right: 3.5rem;
+}
+
+.containerr .addproduct .formadd .imageupload {
+  display: flex;
+  width: 90%;
+  /* background-color: blue; */
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+.containerr .addproduct .formadd .input-image {
+  width: 40%;
+  margin: 0;
+}
+
+.addproduct .price {
+  margin-top: 20px;
+  padding: 1rem;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+.addproduct .addbtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}

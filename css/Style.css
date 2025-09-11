@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  list-style-type: none;
+  --primary_btn: rgba(255, 107, 107, 1);
+  --bg_color: rgba(255, 247, 247, 1);
+  font-family: "poppins", sans-serif;
+}
+
+/* Container */
+.containerr {
+  width: 100%;
+  height: 600px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  height: 3.5rem;
+  align-items: center;
+  box-shadow: 0px 1.4px 2px black;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar .navbar-left {
+  font-size: 1.5rem;
+  padding: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.navbar .navbar-left span {
+  color: var(--primary_btn);
+}
+
+.navbar .navbar-middle ul li {
+  display: inline-block;
+  padding-left: 20px;
+}
+.navbar .navbar-middle ul {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .navbar-right ul li {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.navbar .navbar-right .btn-cart {
+  border: none;
+}
+.navbar .navbar-right ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Home */
+.home {
+  width: 100%;
+  height: 680px;
+  background-color: var(--bg_color);
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-top: 3.6rem;
+}
+
+.home .leftsec {
+  width: 425px;
+}
+.home .leftsec h1 {
+  font-weight: bold;
+}
+.home .leftsec a {
+  color: white;
+  background-color: var(--primary_btn);
+  padding: 4px;
+  border-radius: 5px;
+  border: 2px solid black;
+  text-decoration: none;
+  font-weight: bolder;
+  text-shadow: 1.5px 2px 2px black;
+}
+
+.home .rightsec img {
+  border-radius: 5%;
+  box-shadow: 1.5px 2px 2px black;
+}
+
+/* tentang kami */
+.aboutus {
+  width: 100%;
+  height: 740px;
+  background-color: var(--bg_color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.aboutus .rightsec {
+  width: 425px;
+}
+.aboutus .rightsec h1 {
+  font-weight: bold;
+}
+
+.aboutus .leftsec img {
+  border-radius: 5%;
+  box-shadow: 1.5px 2px 2px black;
+}
+
+/* produk kami */
+
+.ourproduct {
+  width: 100%;
+  height: 650px;
+  background-color: var(--bg_color);
+  /* align-items: center; */
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+}
+
+.ourproduct h1 {
+  margin-top: 5rem;
+}
+
+.ourproduct .produk {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-top: 4rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  justify-content: start;
+}
+
+.ourproduct .produk .menu {
+  border: 2px solid black;
+  height: 385px;
+  padding: 1rem;
+  border-radius: 5%;
+  box-shadow: 2px 2px 2px black;
+}
+.ourproduct .produk .menu img {
+  border-radius: 5%;
+}
+.ourproduct .produk .menu h5 {
+  margin-top: 8px;
+  font-weight: bold;
+}
+.ourproduct .produk .menu .btn-add {
+  background-color: var(--primary_btn);
+  color: white;
+  font-weight: bold;
+}
+
+/* kontak kami */
+
+.Contactus {
+  width: 100%;
+  height: 740px;
+  background-color: var(--bg_color);
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.Contactus h1 {
+  padding-top: 5rem;
+}
+
+.Contactus .formsection {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80dvw;
+  height: 30rem;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 25px;
+  margin-left: 10%;
+  margin-top: 3rem;
+}
+
+.Contactus .leftsection {
+  padding: 2rem;
+}
+.Contactus .leftsection iframe {
+  border-radius: 2%;
+}
+
+.Contactus .rightsection {
+  width: 50%;
+}
+
+.Contactus .formsection .btn-add {
+  background-color: var(--primary_btn);
+  color: white;
+  font-weight: bold;
+  width: 10rem;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  height: 65px;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.footer .top {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.footer .top a {
+  padding-left: 2rem;
+}

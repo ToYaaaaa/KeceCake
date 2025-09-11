@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  list-style-type: none;
+  --primary_btn: rgba(255, 107, 107, 1);
+  --bg_color: rgba(255, 247, 247, 1);
+  font-family: "poppins", sans-serif;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  height: 3.5rem;
+  align-items: center;
+  box-shadow: 0px 1.4px 2px black;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar .navbar-left {
+  font-size: 1.5rem;
+  padding: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.navbar .navbar-left span {
+  color: var(--primary_btn);
+}
+
+.navbar .navbar-middle ul li {
+  display: inline-block;
+  padding-left: 20px;
+}
+.navbar .navbar-middle ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* List Product Account */
+.containerr {
+  width: 100%;
+  height: 92dvh;
+  background-color: var(--bg_color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 3.6rem; */
+}
+
+.containerr .containerhistory {
+  border: 0.2rem solid black;
+  width: 90%;
+  height: 32rem;
+  border-radius: 25px;
+}
+
+.containerr .containerhistory h2 {
+  margin: 0.8rem;
+}
+
+.containerr .listhistory {
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.containerr .containerhistory .listhistory .history {
+  width: 95%;
+  height: 6rem;
+  border: 3px solid black;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.containerr .containerhistory .listhistory p {
+  margin-bottom: 0;
+}
+
+/* .containerr .containerhistory .listhistory .button select {
+  margin-left: 5rem;
+} */
+
+.containerr .containerhistory .listhistory .button {
+  width: 20rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}

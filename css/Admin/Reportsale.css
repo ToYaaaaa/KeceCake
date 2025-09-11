@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  list-style-type: none;
+  --primary_btn: rgba(255, 107, 107, 1);
+  --bg_color: rgba(255, 247, 247, 1);
+  font-family: "poppins", sans-serif;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  height: 3.5rem;
+  align-items: center;
+  box-shadow: 0px 1.4px 2px black;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar .navbar-left {
+  font-size: 1.5rem;
+  padding: 0;
+  font-weight: bold;
+  font-style: italic;
+}
+.navbar .navbar-left span {
+  color: var(--primary_btn);
+}
+
+.navbar .navbar-middle ul li {
+  display: inline-block;
+  padding-left: 20px;
+}
+.navbar .navbar-middle ul {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .navbar-right ul li {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.navbar .navbar-right .btn-cart {
+  border: none;
+}
+.navbar .navbar-right ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* Login */
+.containerr {
+  /* background-color: var(--bg_color); */
+  background-image: url("../../image/Login.png");
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
