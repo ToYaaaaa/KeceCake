@@ -1,4 +1,10 @@
 <?php
+//connect to system php
+require "php/System/system.php";
+
+//fetch product data
+$listproduct = $auth->getproduct();
+
 
 ?>
 
@@ -112,69 +118,15 @@
       <div class="ourproduct" id="ourproduct">
         <h1>Our Product</h1>
         <div class="produk">
+          <?php foreach($listproduct as $hasillistproduct): ?>
           <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
+            <img src="<?= $hasillistproduct["Product_image"] ?>" alt="" width="200px" />
+            <h5><?= $hasillistproduct["Product_category"] ?></h5>
+            <p><?= $hasillistproduct["Product_name"] ?></p>
+            <p><?= $hasillistproduct["Product_price"] ?></p>
+            <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
           </div>
-
-          <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add disabled">Tambah</button>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
       <!-- Produk kami end -->

@@ -42,7 +42,7 @@
     <!-- Login start -->
     <div class="containerr">
       <div class="login">
-        <a href="Afterloginindex.html" class="backbutton"
+        <a href="index.php" class="backbutton"
           ><i class="fa-solid fa-circle-left fa-2xl" style="color: #000000"></i
         ></a>
         <h1>Login</h1>

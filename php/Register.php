@@ -1,4 +1,10 @@
+<?php
+  //connect to system php
+  require "System/system.php";
 
+  //use insert user function
+  $auth->insertuser();
+?>
 
 
 <!DOCTYPE html>
@@ -40,45 +46,53 @@
     <!-- register start -->
     <div class="containerr">
       <div class="register">
-        <a href="Afterloginindex.html" class="backbutton"
+        <a href="../index.php" class="backbutton"
           ><i class="fa-solid fa-circle-left fa-2xl" style="color: #000000"></i
         ></a>
         <h1>register</h1>
-        <div class="form">
-          <div class="form-floating mb-2">
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              placeholder="username"
-            />
-            <label for="username">Username:</label>
-          </div>
+        <form action="" method="post">
+          <div class="form">
+            <div class="form-floating mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="username"
+                name="username"
+                required
+              />
+              <label for="username">Username:</label>
+            </div>
 
-          <div class="form-floating mb-2">
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="email"
-            />
-            <label for="email">Email:</label>
-          </div>
+            <div class="form-floating mb-2">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="email"
+                name="email"
+                required
+              />
+              <label for="email">Email:</label>
+            </div>
 
-          <div class="form-floating mb-2">
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="password"
-            />
-            <label for="password">Password:</label>
+            <div class="form-floating mb-2">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="password"
+                name="password"
+                required
+              />
+              <label for="password">Password:</label>
+            </div>
           </div>
-        </div>
-        <div class="text">
-          <p>Have an Account ? Click <a href="Login.php">Here</a></p>
-        </div>
-        <button class="btn btn-primary">Login</button>
+          <div class="text">
+            <p>Have an Account ? Click <a href="Login.php">Here</a></p>
+          </div>
+          <button type="submit" name="register" class="btn btn-primary">Login</button>
+        </form>
       </div>
     </div>
     <!-- register end -->

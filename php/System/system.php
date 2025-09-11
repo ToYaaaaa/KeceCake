@@ -79,6 +79,11 @@ class Database {
             $statement = $db->prepare("DELETE FROM product WHERE Product_id = $id");
             try {
                 $statement->execute();
+                //reload data dari DB, bukan data lama
+                header("Location: " . $_SERVER['PHP_SELF']);
+                //exit setelah selesai
+                exit;
+
             } catch (PDOException $e) {
                 echo "error at" . $e;
             }
@@ -119,7 +124,104 @@ class Database {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 
-    
+    //user section
+    //show user
+    public function getuser()
+        {
+        // Init
+        $db = $this->connectDb();
+        // Fetch query
+        $query = "SELECT * FROM user";
+        // Get the result
+        //query digunakan untuk menjalankan perintah SELECT dan mendapatkan hasilnya langsung.
+        $results = $db->query($query);
+        return $results;
+        }
+
+    //insert user
+    public function insertuser(){
+        // init db
+        $db = $this->connectDb();
+        if(isset($_POST["deleteuser"])){
+            // init var
+            $id = $_POST["id"];
+            
+            //delete user
+            // Prepared digunakan untuk meningkatkan keamanan dan efisiensi saat menjalankan query SQL, terutama ketika menerima input dari pengguna
+            $statement = $db->prepare("DELETE FROM user WHERE User_id = $id");
+            try {
+                $statement->execute();
+            } catch (PDOException $e) {
+                echo "error at" . $e;
+            }
+        }
+
+        //cek user login
+        if(isset($_POST["login"])){
+            // init var
+            $username = $_POST["username"];
+            $password = $_POST["password"];
+            
+
+            $stmt = $db->prepare("SELECT * FROM user WHERE Username = :username OR Password = :password");
+            $stmt->bindParam(":username", $username);
+            $stmt->bindParam(":password", $password);
+            $stmt->execute();
+            $cekuser = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($cekuser){
+                if($cekuser["Username"] === $username || $cekuser["password"] === $password){
+                    header("Location: ../php/Afterloginindex.php");
+                    //exit setelah selesai
+                    exit;
+                }
+            }else{
+
+            }
+        }
+
+        //insert user
+        if(isset($_POST["register"])){
+         // init var
+            $username = $_POST["username"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            
+
+        $stmt = $db->prepare("SELECT * FROM user WHERE Username = :username OR Email = :email");
+        $stmt->bindParam(":username", $username);
+        $stmt->bindParam(":email", $email);
+        $stmt->execute();
+        $cekuser = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if($cekuser){
+            if($cekuser["Username"] === $username || $cekuser["Email"] === $email){
+                echo "<script>alert('Username/Email sudah di daftarkan');</script>";
+            }
+        }else{
+
+            $insertuser=
+            <<<SQL
+            INSERT INTO user ( Username, Email, Password) VALUES (:username, :email, :password);
+            SQL;
+
+            $statement = $db->prepare($insertuser);
+            $statement->bindParam(':username', $username);
+            $statement->bindParam(':email', $email);
+            $statement->bindParam(":password", $password);
+            
+                try {
+                    $statement->execute();
+                    header("Location: ../php/Login.php");
+                    //exit setelah selesai
+                    exit;
+
+                } catch (PDOException $e) {
+                    echo "error at " . $e;
+                }
+            } 
+        }
+    }
 
 }
 
