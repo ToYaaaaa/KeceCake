@@ -1,9 +1,17 @@
 <?php
   //connect to system php
   require "System/system.php";
+  //Session Start
+  session_start();
 
   //use insert user function
   $auth->insertuser();
+
+  //cek if user have login or not 
+  if(isset($_SESSION["User_id"])){
+    header("location: Afterloginindex.php");
+    exit;
+  }
 ?>
 
 
@@ -91,7 +99,7 @@
           <div class="text">
             <p>Have an Account ? Click <a href="Login.php">Here</a></p>
           </div>
-          <button type="submit" name="register" class="btn btn-primary">Login</button>
+          <button type="submit" name="register" class="btn btn-primary">Register</button>
         </form>
       </div>
     </div>

@@ -1,10 +1,17 @@
 <?php
 //connect to system php
 require "php/System/system.php";
+//session start
+session_start();
 
 //fetch product data
 $listproduct = $auth->getproduct();
 
+//cek if user have login or not 
+  if(isset($_SESSION["User_id"])){
+    header("location: php/Afterloginindex.php");
+    exit;
+  }
 
 ?>
 

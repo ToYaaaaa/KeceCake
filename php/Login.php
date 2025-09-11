@@ -1,4 +1,19 @@
 <?php
+//connect to system php
+require "System/system.php";
+
+//session start
+session_start();
+
+
+//get login function
+$auth->insertuser();
+
+//cek if user have login or not 
+  if(isset($_SESSION["User_id"])){
+    header("location: Afterloginindex.php");
+    exit;
+  }
 
 ?>
 
@@ -42,37 +57,41 @@
     <!-- Login start -->
     <div class="containerr">
       <div class="login">
-        <a href="index.php" class="backbutton"
+        <a href="../index.php" class="backbutton"
           ><i class="fa-solid fa-circle-left fa-2xl" style="color: #000000"></i
         ></a>
         <h1>Login</h1>
-        <div class="form">
-          <div class="form-floating mb-2">
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              placeholder="username"
-            />
-            <label for="username">Username:</label>
-          </div>
+        <form action="" method="post">
+          <div class="form">
+            <div class="form-floating mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="username"
+                name="username"
+                required
+              />
+              <label for="username">Username:</label>
+            </div>
 
-          <div class="form-floating mb-2">
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="password"
-            />
-            <label for="password">Password:</label>
+            <div class="form-floating mb-2">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="password"
+                name="password"
+                required
+              />
+              <label for="password">Password:</label>
+            </div>
           </div>
-        </div>
-        <div class="text">
-          <p>
-            Don't Have an Account Yet? Click <a href="Register.php">Here</a>
-          </p>
-        </div>
-        <button class="btn btn-primary">Login</button>
+          <div class="text">
+            <p>Have an Account ? Click <a href="Login.php">Here</a></p>
+          </div>
+          <button type="submit" name="login" class="btn btn-primary">Login</button>
+        </form>
       </div>
     </div>
     <!-- Login end -->

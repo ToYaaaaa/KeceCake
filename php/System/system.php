@@ -156,7 +156,7 @@ class Database {
             }
         }
 
-        //cek user login
+        //user login
         if(isset($_POST["login"])){
             // init var
             $username = $_POST["username"];
@@ -170,13 +170,18 @@ class Database {
             $cekuser = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if($cekuser){
-                if($cekuser["Username"] === $username || $cekuser["password"] === $password){
+                if($cekuser["Username"] === $username && $cekuser["Password"] === $password){
+                    //session for validation
+                    $_SESSION['User_id'] = $cekuser['User_id'];
+                    $_SESSION['Username'] = $cekuser['Username'];
+
+                    //redirect to after login
                     header("Location: ../php/Afterloginindex.php");
                     //exit setelah selesai
                     exit;
+                }else{
+                echo "<script>alert('Username/Password Wrong');</script>";
                 }
-            }else{
-
             }
         }
 
@@ -196,7 +201,7 @@ class Database {
 
         if($cekuser){
             if($cekuser["Username"] === $username || $cekuser["Email"] === $email){
-                echo "<script>alert('Username/Email sudah di daftarkan');</script>";
+                echo "<script>alert('Username/Email Already Register');</script>";
             }
         }else{
 

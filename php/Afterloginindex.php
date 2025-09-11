@@ -1,3 +1,21 @@
+<?php
+//connect to system php
+require "System/system.php";
+//session start
+session_start();
+
+//fetch product data
+$listproduct = $auth->getproduct();
+
+//cek if user have login or not 
+  if(!isset($_SESSION["User_id"])){
+    header("location: Login.php");
+    exit;
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,7 +72,7 @@
         <div class="navbar-right">
           <ul>
             <li>
-              <a href="Cart.html" class="btn btn-cart">
+              <a href="Cart.php" class="btn btn-cart">
                 <i
                   class="fa-solid fa-cart-shopping fa-lg"
                   style="color: #000000"
@@ -62,7 +80,7 @@
               ></a>
             </li>
             <li>
-              <a href="Riwayatbelanja.html" class="btn-signup"
+              <a href="Shoppinghistory.php" class="btn-signup"
                 ><i class="fa-regular fa-circle-user fa-xl"></i
               ></a>
             </li>
@@ -107,69 +125,15 @@
       <div class="ourproduct" id="ourproduct">
         <h1>Our Product</h1>
         <div class="produk">
+        <?php foreach($listproduct as $hasillistproduct): ?>
           <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
+            <img src="<?= $hasillistproduct["Product_image"] ?>" alt="" width="200px" />
+            <h5><?= $hasillistproduct["Product_category"] ?></h5>
+            <p><?= $hasillistproduct["Product_name"] ?></p>
+            <p><?= $hasillistproduct["Product_price"] ?></p>
+            <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
           </div>
-
-          <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
-          </div>
-
-          <div class="menu">
-            <img src="../image/putu-ayu.png" alt="" width="200px" />
-            <h5>Kue 1</h5>
-            <p>Kue Kering</p>
-            <p>RP 1.000</p>
-            <button type="button" class="btn btn-add">Tambah</button>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
       <!-- Produk kami end -->
