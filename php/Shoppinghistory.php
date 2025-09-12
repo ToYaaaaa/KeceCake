@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../css/Riwayatbelanja.css" />
+    <link rel="stylesheet" href="../css/Shoppinghistory.css" />
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

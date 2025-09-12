@@ -9,7 +9,7 @@ $listproduct = $auth->getproduct();
 
 //cek if user have login or not 
   if(!isset($_SESSION["User_id"])){
-    header("location: Login.php");
+    header("location: ../index.php");
     exit;
   }
 
@@ -80,9 +80,15 @@ $listproduct = $auth->getproduct();
               ></a>
             </li>
             <li>
-              <a href="Shoppinghistory.php" class="btn-signup"
-                ><i class="fa-regular fa-circle-user fa-xl"></i
-              ></a>
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-regular fa-circle-user fa-xl"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Shoppinghistory.php">Shopping History</a></li>
+                  <li><a class="dropdown-item" href="Logoutuser.php">Log Out</a></li>
+                </ul>
+              </div>
             </li>
           </ul>
         </div>
@@ -100,7 +106,7 @@ $listproduct = $auth->getproduct();
           <a href="#ourproduct">Our Product</a>
         </div>
         <div class="rightsec">
-          <img src="../image/Home.png" alt="Contoh Kue" width="200px" />
+          <img id="imagehome" src="../image/Home.png" alt="Contoh Kue" width="300px" />
         </div>
       </div>
       <!-- Home end -->
@@ -108,7 +114,7 @@ $listproduct = $auth->getproduct();
       <!-- Tentang kami start -->
       <div class="aboutus" id="aboutus">
         <div class="leftsec">
-          <img src="../image/tentang kami.png" alt="Contoh Kue" width="200px" />
+          <img src="../image/tentang kami.png" alt="Contoh Kue" width="300px" />
         </div>
         <div class="rightsec">
           <h1>About Us</h1>
@@ -128,10 +134,10 @@ $listproduct = $auth->getproduct();
         <?php foreach($listproduct as $hasillistproduct): ?>
           <div class="menu">
             <img src="<?= $hasillistproduct["Product_image"] ?>" alt="" width="200px" />
-            <h5><?= $hasillistproduct["Product_category"] ?></h5>
-            <p><?= $hasillistproduct["Product_name"] ?></p>
+            <h5><?= $hasillistproduct["Product_name"] ?></h5>
+            <p><?= $hasillistproduct["Product_category"] ?></p>
             <p><?= $hasillistproduct["Product_price"] ?></p>
-            <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
+            <button type="submit" name="addtocart" class="btn btn-add">Add</button>
           </div>
           <?php endforeach; ?>
         </div>
@@ -216,7 +222,34 @@ $listproduct = $auth->getproduct();
     </div>
 
     <!-- Javascript -->
-    <script src="js/Script.js"></script>
+    <script>
+      //home image change
+        const imagehome = document.querySelector("#imagehome");
+        let counter = 0;
+
+        const ListImageHome = [
+          "../image/Home1.png",
+          "../image/Home2.png",
+          "../image/Home3.png",
+          "../image/Home4.png",
+          "../image/Home5.png",
+        ];
+        const ListImageAboutus = [
+          "About1.png",
+          "About2.png",
+          "About3.png",
+          "About4.png",
+          "About5.png",
+        ];
+
+        function ChangeImageHome() {
+          counter = (counter + 1) % ListImageHome.length;
+          imagehome.src = ListImageHome[counter];
+        }
+
+        setInterval(ChangeImageHome, 3000);
+
+    </script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

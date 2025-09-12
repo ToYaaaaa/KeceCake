@@ -128,8 +128,8 @@ $listproduct = $auth->getproduct();
           <?php foreach($listproduct as $hasillistproduct): ?>
           <div class="menu">
             <img src="<?= $hasillistproduct["Product_image"] ?>" alt="" width="200px" />
-            <h5><?= $hasillistproduct["Product_category"] ?></h5>
-            <p><?= $hasillistproduct["Product_name"] ?></p>
+            <h5><?= $hasillistproduct["Product_name"] ?></h5>
+            <p><?= $hasillistproduct["Product_category"] ?></p>
             <p><?= $hasillistproduct["Product_price"] ?></p>
             <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
           </div>
