@@ -98,6 +98,7 @@
 .home .rightsec img {
   border-radius: 5%;
   box-shadow: 1.5px 2px 2px black;
+  transition: all 0.5 ease-in-out;
 }
 
 /* tentang kami */
