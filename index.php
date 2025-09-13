@@ -7,6 +7,9 @@ session_start();
 //fetch product data
 $listproduct = $auth->getproduct();
 
+//fetch search category for product
+$listsearch = $auth->searchproduct();
+
 //cek if user have login or not 
   if(isset($_SESSION["User_id"])){
     header("location: php/Afterloginindex.php");
@@ -124,16 +127,39 @@ $listproduct = $auth->getproduct();
       <!-- Produk kami start -->
       <div class="ourproduct" id="ourproduct">
         <h1>Our Product</h1>
-        <div class="produk">
-          <?php foreach($listproduct as $hasillistproduct): ?>
-          <div class="menu">
-            <img src="<?= $hasillistproduct["Product_image"] ?>" alt="" width="200px" />
-            <h5><?= $hasillistproduct["Product_name"] ?></h5>
-            <p><?= $hasillistproduct["Product_category"] ?></p>
-            <p><?= $hasillistproduct["Product_price"] ?></p>
-            <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
+        <form action="" method="post" class="topproduct">
+          <div class="input-group">
+            <button name="search" class="btn btn-outline-secondary" type="submit">Search</button>
+            <select name="searchcategory" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+              <option selected>Category</option>
+              <option value="kue kering">Kue Kering</option>
+              <option value="kue basah">Kue Basah</option>
+            </select>
           </div>
+        </form>
+        <div class="produk">
+        <?php if(!isset($_POST["search"])): ?>
+          <?php foreach($listproduct as $hasillistproduct): ?>
+            <div class="menu">
+              <img src="<?= $hasillistproduct["Product_image"] ?>" alt="" width="200px" />
+              <h5><?= $hasillistproduct["Product_name"] ?></h5>
+              <p><?= $hasillistproduct["Product_category"] ?></p>
+              <p><?= $hasillistproduct["Product_price"] ?></p>
+              <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
+            </div>
           <?php endforeach; ?>
+
+          <?php elseif(isset($_POST["search"])):?>
+            <?php foreach($listsearch as $hasillistsearch): ?>
+              <div class="menu">
+                <img src="<?= $hasillistsearch["Product_image"] ?>" alt="" width="200px" />
+                <h5><?= $hasillistsearch["Product_name"] ?></h5>
+                <p><?= $hasillistsearch["Product_category"] ?></p>
+                <p><?= $hasillistsearch["Product_price"] ?></p>
+                <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
+              </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
         </div>
       </div>
       <!-- Produk kami end -->

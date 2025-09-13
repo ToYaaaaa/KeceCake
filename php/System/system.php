@@ -66,6 +66,22 @@ class Database {
         return $results;
         }
 
+    //search product
+    public function searchproduct(){
+        //init db
+        $db = $this->connectDb();
+
+        if(isset($_POST["search"])){
+            $searchcategory = $_POST["searchcategory"];
+            // Fetch query
+            $query = "SELECT * FROM product WHERE Product_category = '$searchcategory'";
+            // Get the result
+            //query digunakan untuk menjalankan perintah SELECT dan mendapatkan hasilnya langsung.
+            $results = $db->query($query);
+            return $results;
+        }
+    }
+
     //insert product
     public function insertproduct(){
         // init db

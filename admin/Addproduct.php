@@ -103,7 +103,6 @@ $auth->insertproduct();
           </div>
 
           <div class="input-group mb-3 imageupload">
-            <label class="input-group-text" for="imageproduct">Product Image</label>
             <input type="file" class="form-control input-image" id="imageproduct" name="imageproduct" accept=".png, .jpg, .jpeg" required>
           </div>
 

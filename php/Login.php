@@ -88,7 +88,7 @@ $auth->insertuser();
             </div>
           </div>
           <div class="text">
-            <p>Have an Account ? Click <a href="Login.php">Here</a></p>
+            <p>Doesn`t Have any Account ? Click <a href="Register.php">Here</a></p>
           </div>
           <button type="submit" name="login" class="btn btn-primary">Login</button>
         </form>
