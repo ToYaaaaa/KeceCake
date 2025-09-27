@@ -37,16 +37,16 @@
     <!-- Navbar start -->
     <div class="navbar">
       <!-- left sec -->
-      <a href="Afterloginindex.html">
+      <a href="Afterloginindex.php">
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
       <div class="navbar-middle">
         <ul>
-          <a href="Afterloginindex.html#"><li>Home</li></a>
-          <a href="Afterloginindex.html#aboutus"><li>About Us</li></a>
-          <a href="Afterloginindex.html#ourproduct"><li>Our Product</li></a>
-          <a href="Afterloginindex.html#Contactus"><li>Contact Us</li></a>
+          <a href="Afterloginindex.php#"><li>Home</li></a>
+          <a href="Afterloginindex.php#aboutus"><li>About Us</li></a>
+          <a href="Afterloginindex.php#ourproduct"><li>Our Product</li></a>
+          <a href="Afterloginindex.php#Contactus"><li>Contact Us</li></a>
         </ul>
       </div>
       <!-- right sec -->
@@ -75,6 +75,7 @@
       <div class="cart">
         <div class="leftsec">
           <h2>Cart</h2>
+          <!--  -->
           <div class="containerproduct">
             <div class="product">
               <img src="../image/dadar-gulung.png" alt="" width="80px" />
@@ -92,75 +93,8 @@
                 <i class="fa-solid fa-trash-can fa-xl"></i>
               </button>
             </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <div class="quantity">
-                <button class="btn">+</button>
-                <input type="text" value="1" readonly />
-                <button class="btn">-</button>
-              </div>
-              <p>RP 3.500</p>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <div class="quantity">
-                <button class="btn">+</button>
-                <input type="text" value="1" readonly />
-                <button class="btn">-</button>
-              </div>
-              <p>RP 3.500</p>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <div class="quantity">
-                <button class="btn">+</button>
-                <input type="text" value="1" readonly />
-                <button class="btn">-</button>
-              </div>
-              <p>RP 3.500</p>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <div class="quantity">
-                <button class="btn">+</button>
-                <input type="text" value="1" readonly />
-                <button class="btn">-</button>
-              </div>
-              <p>RP 3.500</p>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
           </div>
+          <!--  -->
         </div>
         <div class="rightsec">
           <h2>Payment</h2>

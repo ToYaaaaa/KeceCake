@@ -137,7 +137,7 @@ $listsearch = $auth->searchproduct();
           <div class="input-group">
             <button name="search" class="btn btn-outline-secondary" type="submit">Search</button>
             <select name="searchcategory" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-              <option selected>Category</option>
+              <option disabled selected>Category</option>
               <option value="kue kering">Kue Kering</option>
               <option value="kue basah">Kue Basah</option>
             </select>
@@ -151,7 +151,7 @@ $listsearch = $auth->searchproduct();
               <h5><?= $hasillistproduct["Product_name"] ?></h5>
               <p><?= $hasillistproduct["Product_category"] ?></p>
               <p><?= $hasillistproduct["Product_price"] ?></p>
-              <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
+              <button type="submit" name="addtocart" class="btn btn-add">Add</button>
             </div>
           <?php endforeach; ?>
 
@@ -162,7 +162,7 @@ $listsearch = $auth->searchproduct();
                 <h5><?= $hasillistsearch["Product_name"] ?></h5>
                 <p><?= $hasillistsearch["Product_category"] ?></p>
                 <p><?= $hasillistsearch["Product_price"] ?></p>
-                <button type="submit" name="addtocart" class="btn btn-add disabled">Add</button>
+                <button type="submit" name="addtocart" class="btn btn-add">Add</button>
               </div>
             <?php endforeach; ?>
         <?php endif; ?>
@@ -248,42 +248,8 @@ $listsearch = $auth->searchproduct();
     </div>
 
     <!-- Javascript -->
-    <script>
-      //home image change
-        const imagehome = document.querySelector("#imagehome");
-        const imageabout = document.querySelector("#imageabout");
-        let counter = 0;
-
-        const ListImageHome = [
-          "../image/klepon.png",
-          "../image/serabi.png",
-          "../image/nagasari.png",
-          "../image/dadar-gulung.png",
-          "../image/kue-ape.png",
-        ];
-        const ListImageAboutus = [
-          "../image/kue-lumpur.png",
-          "../image/lapis-legit.png",
-          "../image/onde-onde.png",
-          "../image/putu-ayu.png",
-          "../image/kue-lumpur.png",
-        ];
-
-        //change image home
-        function ChangeImageHome() {
-          counter = (counter + 1) % ListImageHome.length;
-          imagehome.src = ListImageHome[counter];
-        }
-        setInterval(ChangeImageHome, 3000);
-
-        //change image about us
-        function ChangeImageAbout() {
-          counter = (counter + 1) % ListImageAboutus.length;
-          imageabout.src = ListImageAboutus[counter];
-        }
-        setInterval(ChangeImageAbout, 3000);
-
-    </script>
+    <script src="../js/Script.js"></script>
+    <script src="../js/app.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
