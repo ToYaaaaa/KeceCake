@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Produk KeceCake</title>
+    <script src="js/app.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <h1>Daftar Produk</h1>
+
+    <div x-data="products">
+      <template x-for="p in items" :key="p.Product_id">
+        <div class="card">
+          <h3 x-text="p.Product_name"></h3>
+          <p>Rp <span x-text="p.Product_price"></span></p>
+        </div>
+      </template>
+    </div>
+  </body>
+</html>

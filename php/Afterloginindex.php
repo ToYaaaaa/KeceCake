@@ -53,6 +53,13 @@ $listsearch = $auth->searchproduct();
       src="https://kit.fontawesome.com/2fbd2eb978.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- alphine js -->
+      <script src="../js/app.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body>
     <div class="containerr">
@@ -131,41 +138,28 @@ $listsearch = $auth->searchproduct();
       <!-- Tentang kami end -->
 
       <!-- Produk kami start -->
-      <div class="ourproduct" id="ourproduct">
+      <div class="ourproduct" id="ourproduct" x-data="products">
         <h1>Our Product</h1>
         <form action="" method="post" class="topproduct">
           <div class="input-group">
             <button name="search" class="btn btn-outline-secondary" type="submit">Search</button>
-            <select name="searchcategory" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
-              <option disabled selected>Category</option>
-              <option value="kue kering">Kue Kering</option>
+            <select class="form-select" id="inputGroupSelect03" @change="loadProducts($event.target.value)">
+              <option value="all">All</option>
               <option value="kue basah">Kue Basah</option>
+              <option value="kue kering">Kue Kering</option>
             </select>
           </div>
         </form>
         <div class="produk">
-        <?php if(!isset($_POST["search"])): ?>
-          <?php foreach($listproduct as $hasillistproduct): ?>
+          <template x-for="p in items" :key="p.Product_id">
             <div class="menu">
-              <img src="<?= $hasillistproduct["Product_image"] ?>" alt="" width="200px" />
-              <h5><?= $hasillistproduct["Product_name"] ?></h5>
-              <p><?= $hasillistproduct["Product_category"] ?></p>
-              <p><?= $hasillistproduct["Product_price"] ?></p>
+              <img  :src="p.Product_image" alt="" width="200px" />
+              <h5 x-text="p.Product_name"></h5>
+              <p x-text="p.Product_category"></p>
+              <p x-text="p.Product_price"></p>
               <button type="submit" name="addtocart" class="btn btn-add">Add</button>
             </div>
-          <?php endforeach; ?>
-
-          <?php elseif(isset($_POST["search"])):?>
-            <?php foreach($listsearch as $hasillistsearch): ?>
-              <div class="menu">
-                <img src="<?= $hasillistsearch["Product_image"] ?>" alt="" width="200px" />
-                <h5><?= $hasillistsearch["Product_name"] ?></h5>
-                <p><?= $hasillistsearch["Product_category"] ?></p>
-                <p><?= $hasillistsearch["Product_price"] ?></p>
-                <button type="submit" name="addtocart" class="btn btn-add">Add</button>
-              </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
+          </template>
         </div>
       </div>
       <!-- Produk kami end -->
@@ -249,7 +243,6 @@ $listsearch = $auth->searchproduct();
 
     <!-- Javascript -->
     <script src="../js/Script.js"></script>
-    <script src="../js/app.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
