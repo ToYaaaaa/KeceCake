@@ -5,6 +5,9 @@ require "../php/System/system.php";
 //pakai function show product
 $listproduct = $auth->getproduct();
 
+//pakai function edit product
+$auth->editproduct();
+
 //pakai function insert product untuk delete
 $auth->insertproduct();
 
@@ -51,16 +54,16 @@ $auth->insertproduct();
     <!-- Navbar start -->
     <div class="navbar">
       <!-- left sec -->
-      <a href="Listakunuser.html">
+      <a href="Listuseraccount.php">
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
       <div class="navbar-middle">
         <ul>
-          <a href="Listakunuser.html"><li>list User Account</li></a>
-          <a href="Listproduct.html"><li>List Product</li></a>
-          <a href="Listriwayat.html"><li>User Shopping History</li></a>
-          <a href="Reportsale.html"><li>Report Sale</li></a>
+          <a href="Listuseraccount.php"><li>list User Account</li></a>
+          <a href="Listproduct.php"><li>List Product</li></a>
+          <a href="Listhistory.php"><li>User Shopping History</li></a>
+          <a href="Reportsale.php"><li>Report Sale</li></a>
         </ul>
       </div>
     </div>
@@ -87,7 +90,9 @@ $auth->insertproduct();
               <p>Price: RP <span><?= $hasillistproduct["Product_price"]?></span></p>
             </div>
             <div class="button">
-              <a href="Editproduct.php" class="btn btn-primary">Edit</a>
+              <form action="" method="get">
+                <a href="editproduct.php?id=<?= $hasillistproduct["Product_id"] ?>" class="btn btn-primary">Edit</a>
+              </form>
               <form action="" method="post">
                 <input type="hidden" name="id" value="<?= $hasillistproduct["Product_id"] ?>">
                 <button class="btn" name="deleteproduct">

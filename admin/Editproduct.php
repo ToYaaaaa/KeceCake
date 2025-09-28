@@ -1,3 +1,26 @@
+<?php 
+require "../php/System/system.php";
+
+//get db
+$db = $auth->connectDb();
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $stmt = $db->prepare("SELECT * FROM product WHERE Product_id = :id");
+    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+//pakai function edit product
+$auth->editproduct();
+
+//pakai function insert product
+$auth->insertproduct();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,16 +60,16 @@
     <!-- Navbar start -->
     <div class="navbar">
       <!-- left sec -->
-      <a href="Listakunuser.html">
+      <a href="Listuseraccount.php">
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
       <div class="navbar-middle">
         <ul>
-          <a href="Listakunuser.html"><li>list User Account</li></a>
-          <a href="Listproduct.html"><li>List Product</li></a>
-          <a href="Listriwayat.html"><li>User Shopping History</li></a>
-          <a href="Reportsale.html"><li>Report Sale</li></a>
+          <a href="Listuseraccount.php"><li>list User Account</li></a>
+          <a href="Listproduct.php"><li>List Product</li></a>
+          <a href="Listhistory.php"><li>User Shopping History</li></a>
+          <a href="Reportsale.php"><li>Report Sale</li></a>
         </ul>
       </div>
     </div>
@@ -62,38 +85,34 @@
               style="color: #000000"
             ></i
           ></a>
-          <h2>Add Product</h2>
+          <h2>Edit Product</h2>
         </div>
+        <form action="" method="post" enctype="multipart/form-data">
         <div class="formadd">
           <div class="input-group mb-3">
             <label class="input-group-text dropdown" for="inputGroupSelect01"
-              >Category</label
-            >
-            <select class="form-select" id="inputGroupSelect01">
-              <option selected>Choose...</option>
-              <option value="1">Kue Kering</option>
-              <option value="2">Kue Basah</option>
+              >Category</label>
+            <select name="category" class="form-select" id="inputGroupSelect01">
+              <option value="kue kering">Kue Kering</option>
+              <option value="kue basah">Kue Basah</option>
             </select>
           </div>
+
+          <input type="hidden" name="id" value="<?= $product["Product_id"]?>">
 
           <div class="form-floating mb-2">
             <input
               type="text"
               class="form-control"
               id="Productname"
-              placeholder="Product Name"
+              placeholder="<?= $product["Product_name"]?>"
+              name="name"
             />
-            <label for="Productname" class="label">Product Name:</label>
+            <label for="Productname" class="label"><?= $product["Product_name"]?></label>
           </div>
 
-          <div class="form-floating mb-2" class="label">
-            <input
-              type="text"
-              class="form-control"
-              id="imageproduct"
-              placeholder="Image product"
-            />
-            <label for="imageproduct" class="label">Image Product:</label>
+          <div class="input-group mb-3 imageupload">
+            <input type="file" class="form-control input-image" id="imageproduct" name="imageproduct" accept=".png, .jpg, .jpeg" required>
           </div>
 
           <div class="form-floating mb-2">
@@ -101,14 +120,16 @@
               type="text"
               class="form-control"
               id="price"
-              placeholder="price"
+              placeholder="<?= $product["Product_price"]?>"
+              name="price"
             />
-            <label for="price" class="label">Price:</label>
+            <label for="price" class="label"><?= $product["Product_price"]?></label>
           </div>
         </div>
         <div class="addbtn">
-          <button class="btn btn-primary">Add Product</button>
+          <button type="submit" name="editproduct" class="btn btn-primary">Edit Product</button>
         </div>
+        </form>
       </div>
     </div>
     <!-- Add product end -->

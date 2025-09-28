@@ -37,16 +37,16 @@
     <!-- Navbar start -->
     <div class="navbar">
       <!-- left sec -->
-      <a href="Listakunuser.html">
+      <a href="Listuseraccount.php">
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
       <div class="navbar-middle">
         <ul>
-          <a href="Listakunuser.html"><li>list User Account</li></a>
-          <a href="Listproduct.html"><li>List Product</li></a>
-          <a href="Listriwayat.html"><li>User Shopping History</li></a>
-          <a href="Reportsale.html"><li>Report Sale</li></a>
+          <a href="Listuseraccount.php"><li>list User Account</li></a>
+          <a href="Listproduct.php"><li>List Product</li></a>
+          <a href="Listhistory.php"><li>User Shopping History</li></a>
+          <a href="Reportsale.php"><li>Report Sale</li></a>
         </ul>
       </div>
     </div>

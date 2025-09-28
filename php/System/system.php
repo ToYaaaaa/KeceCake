@@ -82,6 +82,46 @@ class Database {
         }
     }
 
+    //edit product
+    public function editproduct(){
+        //init db
+        $db = $this->connectDb();
+        if(isset($_POST["editproduct"])){
+            //init var
+            $id = $_POST["id"];
+             // init var
+            $category = $_POST["category"];
+            $productname = $_POST["name"];
+            $price = $_POST["price"];
+        //foto isi
+            //basename adalah untuk ngambil nama file terakhir dari sebuah path. jadi hanya ambil nama filenya saja disini
+            $filenameproduct = basename($_FILES["imageproduct"]["name"]);
+            $filetmppathproduct = $_FILES["imageproduct"]["tmp_name"];
+            $fixpathproduct = $this->handlerimg($filenameproduct, $filetmppathproduct);
+            
+        // insert product
+            $editproduct=
+            <<<SQL
+            UPDATE product SET Product_name = :product_name, Product_image = :product_image, Product_category = :product_category, Product_price = :product_price WHERE Product_id = :id;
+            SQL;
+
+            $statement = $db->prepare($editproduct);
+            $statement->bindParam(':product_image',$fixpathproduct);
+            $statement->bindParam(':product_name', $productname);
+            $statement->bindParam(':product_category', $category);
+            $statement->bindParam(":product_price", $price);
+            $statement->bindParam(':id', $id, PDO::PARAM_INT);
+            
+                try {
+                    $statement->execute();
+                    header("location: listproduct.php");
+                } catch (PDOException $e) {
+                    echo "error at " . $e;
+                }
+
+        }
+    }
+
     //insert product
     public function insertproduct(){
         // init db
