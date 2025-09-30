@@ -37,23 +37,23 @@
     <!-- Navbar start -->
     <div class="navbar">
       <!-- left sec -->
-      <a href="Afterloginindex.html">
+      <a href="Afterloginindex.php">
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
       <div class="navbar-middle">
         <ul>
-          <a href="Afterloginindex.html#"><li>Home</li></a>
-          <a href="Afterloginindex.html#aboutus"><li>About Us</li></a>
-          <a href="Afterloginindex.html#ourproduct"><li>Our Product</li></a>
-          <a href="Afterloginindex.html#contactus"><li>Contact Us</li></a>
+          <a href="Afterloginindex.php#"><li>Home</li></a>
+          <a href="Afterloginindex.php#aboutus"><li>About Us</li></a>
+          <a href="Afterloginindex.php#ourproduct"><li>Our Product</li></a>
+          <a href="Afterloginindex.php#contactus"><li>Contact Us</li></a>
         </ul>
       </div>
       <!-- right sec -->
       <div class="navbar-right">
         <ul>
           <li>
-            <a href="Cart.html" class="btn btn-cart">
+            <a href="Cart.php" class="btn btn-cart">
               <i
                 class="fa-solid fa-cart-shopping fa-lg"
                 style="color: #000000"
@@ -75,6 +75,7 @@
       <div class="historyshopping">
         <h2>Shopping History</h2>
         <div class="containerproduct">
+          <!--  -->
           <div class="product">
             <div class="status">
               <i
@@ -89,138 +90,13 @@
               <p>Total Price: <span>RP 500.000</span></p>
             </div>
             <div class="button">
-              <a href="Strukbelanja.html" class="btn btn-primary">Detail</a>
+              <a href="Invoice.php" class="btn btn-primary">Detail</a>
               <button class="btn">
                 <i class="fa-solid fa-trash-can fa-xl"></i>
               </button>
             </div>
           </div>
-
-          <div class="product">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="Datecheckout">
-              <p>04/11/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <a href="Strukbelanja.html" class="btn btn-primary">Detail</a>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="product">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="Datecheckout">
-              <p>04/11/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <a href="Strukbelanja.html" class="btn btn-primary">Detail</a>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="product">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="Datecheckout">
-              <p>04/11/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <a href="Strukbelanja.html" class="btn btn-primary">Detail</a>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="product">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="Datecheckout">
-              <p>04/11/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <a href="Strukbelanja.html" class="btn btn-primary">Detail</a>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="product">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="Datecheckout">
-              <p>04/11/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <a href="Strukbelanja.html" class="btn btn-primary">Detail</a>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="product">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="Datecheckout">
-              <p>04/11/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <a href="Strukbelanja.html" class="btn btn-primary">Detail</a>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
+          <!--  -->
         </div>
       </div>
     </div>

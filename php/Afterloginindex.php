@@ -142,7 +142,6 @@ $listsearch = $auth->searchproduct();
         <h1>Our Product</h1>
         <form action="" method="post" class="topproduct">
           <div class="input-group">
-            <button name="search" class="btn btn-outline-secondary" type="submit">Search</button>
             <select class="form-select" id="inputGroupSelect03" @change="loadProducts($event.target.value)">
               <option value="all">All</option>
               <option value="kue basah">Kue Basah</option>

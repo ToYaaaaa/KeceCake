@@ -1,3 +1,15 @@
+<?php
+  require "../php/System/system.php";
+
+  //pakai function get user
+  $listuser = $auth->getuser();
+
+  //pakai function delete user
+  $auth->deleteuser();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,89 +69,26 @@
       <div class="listuseraccount">
         <h2>List User Account</h2>
         <div class="listuser">
+          <!--  -->
+        <?php foreach($listuser as $hasillistuser): ?>
           <div class="user">
             <div class="username">
-              <p>Ucok Baba</p>
+              <p><?= $hasillistuser["Username"]?></p>
             </div>
             <div class="password">
-              <p>Udin123</p>
+              <p><?= $hasillistuser["Password"]?></p>
             </div>
             <div class="button">
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
+              <form action="" method="post">
+                <input type="hidden" name="id" value="<?= $hasillistuser["User_id"]?>">
+                <button type="submit" name="deleteuser" class="btn">
+                  <i class="fa-solid fa-trash-can fa-xl"></i>
+                </button>
+              </form>
             </div>
           </div>
-
-          <div class="user">
-            <div class="username">
-              <p>Ucok Baba</p>
-            </div>
-            <div class="password">
-              <p>Udin123</p>
-            </div>
-            <div class="button">
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="user">
-            <div class="username">
-              <p>Ucok Baba</p>
-            </div>
-            <div class="password">
-              <p>Udin123</p>
-            </div>
-            <div class="button">
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="user">
-            <div class="username">
-              <p>Ucok Baba</p>
-            </div>
-            <div class="password">
-              <p>Udin123</p>
-            </div>
-            <div class="button">
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="user">
-            <div class="username">
-              <p>Ucok Baba</p>
-            </div>
-            <div class="password">
-              <p>Udin123</p>
-            </div>
-            <div class="button">
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="user">
-            <div class="username">
-              <p>Ucok Baba</p>
-            </div>
-            <div class="password">
-              <p>Udin123</p>
-            </div>
-            <div class="button">
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
+        <?php endforeach; ?>
+          <!--  -->
         </div>
       </div>
     </div>

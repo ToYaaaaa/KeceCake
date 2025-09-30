@@ -37,23 +37,23 @@
     <!-- Navbar start -->
     <div class="navbar">
       <!-- left sec -->
-      <a href="Afterloginindex.html">
+      <a href="Afterloginindex.php">
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
       <div class="navbar-middle">
         <ul>
-          <a href="Afterloginindex.html#"><li>Home</li></a>
-          <a href="Afterloginindex.html#aboutus"><li>About Us</li></a>
-          <a href="Afterloginindex.html#ourproduct"><li>Our Product</li></a>
-          <a href="Afterloginindex.html#contactus"><li>Contact Us</li></a>
+          <a href="Afterloginindex.php#"><li>Home</li></a>
+          <a href="Afterloginindex.php#aboutus"><li>About Us</li></a>
+          <a href="Afterloginindex.php#ourproduct"><li>Our Product</li></a>
+          <a href="Afterloginindex.php#contactus"><li>Contact Us</li></a>
         </ul>
       </div>
       <!-- right sec -->
       <div class="navbar-right">
         <ul>
           <li>
-            <a href="Cart.html" class="btn btn-cart">
+            <a href="Cart.php" class="btn btn-cart">
               <i
                 class="fa-solid fa-cart-shopping fa-lg"
                 style="color: #000000"
@@ -61,7 +61,7 @@
             ></a>
           </li>
           <li>
-            <a href="Riwayatbelanja.html" class="btn-signup"
+            <a href="Shoppinghistory.php" class="btn-signup"
               ><i class="fa-regular fa-circle-user fa-xl"></i
             ></a>
           </li>
@@ -74,13 +74,14 @@
     <div class="containerr">
       <div class="receipt">
         <div class="leftsec">
-          <a href="Riwayatbelanja.html"
+          <a href="Shoppinghistory.php"
             ><i
               class="fa-solid fa-circle-left fa-2xl"
               style="color: #000000"
             ></i
           ></a>
           <div class="containerproduct">
+            <!--  -->
             <div class="product">
               <img src="../image/dadar-gulung.png" alt="" width="80px" />
               <div class="partsproduct">
@@ -93,97 +94,7 @@
                 <input type="text" value="1" readonly />
               </div>
             </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <p>RP 3.500</p>
-              <div class="quantity">
-                <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
-              </div>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <p>RP 3.500</p>
-              <div class="quantity">
-                <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
-              </div>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <p>RP 3.500</p>
-              <div class="quantity">
-                <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
-              </div>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <p>RP 3.500</p>
-              <div class="quantity">
-                <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
-              </div>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <p>RP 3.500</p>
-              <div class="quantity">
-                <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
-              </div>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <p>RP 3.500</p>
-              <div class="quantity">
-                <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
-              </div>
-            </div>
-
-            <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
-              <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
-              </div>
-              <p>RP 3.500</p>
-              <div class="quantity">
-                <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
-              </div>
-            </div>
+          <!--  -->
           </div>
         </div>
 

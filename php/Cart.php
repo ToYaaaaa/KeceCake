@@ -61,7 +61,7 @@
             ></a>
           </li>
           <li>
-            <a href="Riwayatbelanja.html" class="btn-signup"
+            <a href="Shoppinghistory.php" class="btn-signup"
               ><i class="fa-regular fa-circle-user fa-xl"></i
             ></a>
           </li>

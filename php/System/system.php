@@ -116,7 +116,7 @@ class Database {
                     $statement->execute();
                     header("location: listproduct.php");
                 } catch (PDOException $e) {
-                    echo "error at " . $e;
+                    echo "error dibagian " . $e;
                 }
 
         }
@@ -141,7 +141,7 @@ class Database {
                 exit;
 
             } catch (PDOException $e) {
-                echo "error at" . $e;
+                echo "error dibagian" . $e;
             }
         }
 
@@ -172,7 +172,7 @@ class Database {
                 try {
                     $statement->execute();
                 } catch (PDOException $e) {
-                    echo "error at " . $e;
+                    echo "error dibagian " . $e;
                 }
             } 
         }
@@ -181,6 +181,7 @@ class Database {
     //``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 
     //user section
+
     //show user
     public function getuser()
         {
@@ -194,24 +195,31 @@ class Database {
         return $results;
         }
 
+    //delete user
+    public function deleteuser(){
+        //init db
+        $db = $this->connectDb();
+        //cek apakah ada tombol yang diklik
+        if(isset($_POST["deleteuser"])){
+            $id = $_POST["id"];
+
+            //delete user
+            $statement = $db->prepare("DELETE FROM user WHERE User_id = $id");
+
+            try{
+                $statement->execute();
+                header("Location: " . $_SERVER['PHP_SELF']);
+                exit;
+            }catch(PDOException $e){
+                echo "error dibagian:" . $e;
+            }
+        }
+    }
+
     //insert user
     public function insertuser(){
         // init db
         $db = $this->connectDb();
-        if(isset($_POST["deleteuser"])){
-            // init var
-            $id = $_POST["id"];
-            
-            //delete user
-            // Prepared digunakan untuk meningkatkan keamanan dan efisiensi saat menjalankan query SQL, terutama ketika menerima input dari pengguna
-            $statement = $db->prepare("DELETE FROM user WHERE User_id = $id");
-            try {
-                $statement->execute();
-            } catch (PDOException $e) {
-                echo "error at" . $e;
-            }
-        }
-
         //user login
         if(isset($_POST["login"])){
             // init var
@@ -219,7 +227,7 @@ class Database {
             $password = $_POST["password"];
             
 
-            $stmt = $db->prepare("SELECT * FROM user WHERE Username = :username OR Password = :password");
+            $stmt = $db->prepare("SELECT * FROM user WHERE Username = :username AND Password = :password");
             $stmt->bindParam(":username", $username);
             $stmt->bindParam(":password", $password);
             $stmt->execute();

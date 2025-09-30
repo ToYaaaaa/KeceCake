@@ -127,7 +127,7 @@ $listsearch = $auth->searchproduct();
       <!-- Produk kami start -->
       <div class="ourproduct" id="ourproduct">
         <h1>Our Product</h1>
-        <form action="" method="post" class="topproduct">
+        <form action="index.php#ourproduct" method="post" class="topproduct">
           <div class="input-group">
             <button name="search" class="btn btn-outline-secondary" type="submit">Search</button>
             <select name="searchcategory" class="form-select" id="inputGroupSelect03" aria-label="Example select with button addon">
