@@ -105,6 +105,7 @@
                 class="form-control"
                 id="name"
                 placeholder="Name"
+                required
               />
               <label for="name">Name:</label>
             </div>
@@ -115,6 +116,7 @@
                 class="form-control"
                 id="email"
                 placeholder="email"
+                required
               />
               <label for="email">Email:</label>
             </div>
@@ -125,6 +127,7 @@
                 class="form-control"
                 id="nomor"
                 placeholder="number"
+                required
               />
               <label for="nomor">No.Telp:</label>
             </div>

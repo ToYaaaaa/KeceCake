@@ -89,16 +89,17 @@ $auth->insertproduct();
         </div>
         <form action="" method="post" enctype="multipart/form-data">
         <div class="formadd">
+          <input type="hidden" name="id" value="<?= $product["Product_id"]?>">
+
           <div class="input-group mb-3">
             <label class="input-group-text dropdown" for="inputGroupSelect01"
               >Category</label>
-            <select name="category" class="form-select" id="inputGroupSelect01">
+            <select name="category" class="form-select" id="inputGroupSelect01" required>
               <option value="kue kering">Kue Kering</option>
               <option value="kue basah">Kue Basah</option>
             </select>
           </div>
 
-          <input type="hidden" name="id" value="<?= $product["Product_id"]?>">
 
           <div class="form-floating mb-2">
             <input
@@ -107,6 +108,7 @@ $auth->insertproduct();
               id="Productname"
               placeholder="<?= $product["Product_name"]?>"
               name="name"
+              required
             />
             <label for="Productname" class="label"><?= $product["Product_name"]?></label>
           </div>
@@ -122,6 +124,7 @@ $auth->insertproduct();
               id="price"
               placeholder="<?= $product["Product_price"]?>"
               name="price"
+              required
             />
             <label for="price" class="label"><?= $product["Product_price"]?></label>
           </div>

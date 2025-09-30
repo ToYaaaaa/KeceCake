@@ -188,6 +188,7 @@ $listsearch = $auth->searchproduct();
                 class="form-control"
                 id="name"
                 placeholder="Name"
+                required
               />
               <label for="name">Name:</label>
             </div>
@@ -198,6 +199,7 @@ $listsearch = $auth->searchproduct();
                 class="form-control"
                 id="email"
                 placeholder="email"
+                required
               />
               <label for="email">Email:</label>
             </div>
@@ -208,6 +210,7 @@ $listsearch = $auth->searchproduct();
                 class="form-control"
                 id="nomor"
                 placeholder="number"
+                required
               />
               <label for="nomor">No.Telp:</label>
             </div>
@@ -217,6 +220,7 @@ $listsearch = $auth->searchproduct();
                 class="form-control"
                 placeholder="Leave The Critic and Suggestions Here"
                 id="floatingTextarea"
+                required
               ></textarea>
               <label for="floatingTextarea">Message:</label>
             </div>

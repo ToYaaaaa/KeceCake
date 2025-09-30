@@ -85,7 +85,7 @@ $auth->insertproduct();
             <label class="input-group-text dropdown" for="inputGroupSelect01"
               >Category</label
             >
-            <select class="form-select" id="inputGroupSelect01" name="category">
+            <select class="form-select" id="inputGroupSelect01" name="category" required>
               <option value="kue kering">Kue Kering</option>
               <option value="kue basah">Kue Basah</option>
             </select>
@@ -98,6 +98,7 @@ $auth->insertproduct();
               id="Productname"
               placeholder="Product Name"
               name="productname"
+              required
             />
             <label for="Productname" class="label">Product Name:</label>
           </div>
@@ -113,6 +114,7 @@ $auth->insertproduct();
               id="price"
               placeholder="price"
               name="price"
+              required
             />
             <label for="price" class="label">Price:</label>
           </div>

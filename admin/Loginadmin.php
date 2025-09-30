@@ -45,6 +45,7 @@
               class="form-control"
               id="username"
               placeholder="username"
+              required
             />
             <label for="username">Username:</label>
           </div>
@@ -55,6 +56,7 @@
               class="form-control"
               id="password"
               placeholder="password"
+              required
             />
             <label for="password">Password:</label>
           </div>
