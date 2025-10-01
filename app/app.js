@@ -30,10 +30,30 @@ document.addEventListener("alpine:init", () => {
     totalprice: 0,
     quantitytotal: 0,
     add(newItem) {
-      this.items.push(newItem);
+      //cek apakah barangnya itu sama atau gak
+      let exist = this.items.find((i) => i.Product_id === newItem.Product_id);
+
+      if (exist) {
+        exist.qty++;
+      } else {
+        this.items.push({ ...newItem, qty: 1 });
+      }
+
       this.quantitytotal++;
       this.totalprice += newItem.Product_price;
-      console.log(this.totalprice);
+      console.log(this.items);
+    },
+    min(p) {
+      if (p.qty > 1) {
+        p.qty--;
+        this.quantitytotal--;
+        this.totalprice -= p.Product_price;
+      } else {
+        // kalau sisa 1 hapus dari cart
+        this.items = this.items.filter((i) => i.Product_id !== p.Product_id);
+        this.quantitytotal--;
+        this.totalprice -= p.Product_price;
+      }
     },
   });
 });

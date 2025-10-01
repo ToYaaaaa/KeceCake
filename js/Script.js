@@ -31,3 +31,18 @@ function ChangeImageAbout() {
   imageabout.src = ListImageAboutus[counter];
 }
 setInterval(ChangeImageAbout, 3000);
+
+//cart pop up
+const sidebar = document.querySelector("#cart");
+const btncart = document.querySelector("#btncart");
+
+btncart.addEventListener("click", function (e) {
+  e.preventDefault();
+  sidebar.classList.toggle("active");
+});
+
+document.addEventListener("click", (e) => {
+  if (!sidebar.contains(e.target) && !btncart.contains(e.target)) {
+    sidebar.classList.remove("active");
+  }
+});

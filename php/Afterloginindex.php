@@ -55,7 +55,7 @@ $listsearch = $auth->searchproduct();
     ></script>
 
     <!-- alphine js -->
-      <script src="../js/app.js"></script>
+      <script src="../app/app.js"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -82,7 +82,7 @@ $listsearch = $auth->searchproduct();
         <div class="navbar-right" x-data>
           <ul>
             <li>
-              <a href="Cart.php" class="btn btn-cart">
+              <a href="#" id="btncart" class="btn btn-cart">
                 <i
                   class="fa-solid fa-cart-shopping fa-lg"
                   style="color: #000000"
@@ -107,24 +107,26 @@ $listsearch = $auth->searchproduct();
       <!-- Navbar end -->
 
       <!-- Cart Start -->
-        <div class="cart" x-data>
+        <div class="cart" id="cart" x-data>
           <div class="containerproduct">
-            <div class="product">
-              <img :src="$store.cart.items[`Product_image`]" alt="" width="40px" style="border-radius: 10px;"/>
+            <template x-for="p in $store.cart.items" :key="p.Product_id">
+              <div class="product">
+              <img :src="p.Product_image" alt="" width="40px" style="border-radius: 10px;"/>
               <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
+                <p x-text="p.Product_category"></p>
+                <p x-text="p.Product_name"></p>
               </div>
               <div class="quantity">
-                <button class="btn">+</button>
-                <input type="text" value="1" readonly />
-                <button class="btn">-</button>
+                <button class="btn" @click="$store.cart.add(p)">+</button>
+                <input type="text" :value="p.qty" readonly />
+                <button class="btn" @click="$store.cart.min(p)">-</button>
               </div>
-              <p>RP 3.500</p>
+              <p x-text="rupiah(p.Product_price * p.qty)"></p>
               <button class="btn">
                 <i class="fa-solid fa-trash-can fa-sm"></i>
               </button>
-            </div>
+              </div>
+            </template>
           </div>
           <!-- form payment -->
           <div class="form">
@@ -145,7 +147,7 @@ $listsearch = $auth->searchproduct();
           </div>
           <!-- price -->
           <div class="price">
-            <p>Total Price: <span>RP 1.000.000</span></p>
+            <p>Total Price: <span x-text="rupiah($store.cart.totalprice)">/span></p>
           </div>
           <!-- btn checkout -->
           <div class="checkout">

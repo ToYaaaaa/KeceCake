@@ -11,7 +11,6 @@
 /* Container */
 .containerr {
   width: 100%;
-  height: 600px;
 }
 
 /* navbar */
@@ -79,7 +78,7 @@
 
 /* Cart */
 .cart {
-  position: absolute;
+  position: fixed;
   height: 32rem;
   width: 25rem;
   top: 3.6rem;
@@ -87,6 +86,14 @@
   background-color: rgba(255, 255, 255, 1);
   border-left: 2px solid black;
   border-bottom: 2px solid black;
+  transition: all 0.3s ease;
+  opacity: 0;
+  display: hidden;
+}
+
+.cart.active {
+  opacity: 1;
+  display: block;
 }
 
 .cart .containerproduct {
@@ -117,9 +124,10 @@
 
 .cart .quantity button {
   border: 2px solid black;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   padding: 0.1rem 0.3rem;
-  background-color: var(--primary_btn);
+  color: white;
+  background-color: black;
 }
 .cart .quantity input {
   width: 1.5rem;
