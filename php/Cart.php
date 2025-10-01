@@ -32,6 +32,13 @@
       src="https://kit.fontawesome.com/2fbd2eb978.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- alphine js -->
+      <script src="../js/app.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
   </head>
   <body>
     <!-- Navbar start -->
@@ -50,15 +57,16 @@
         </ul>
       </div>
       <!-- right sec -->
-      <div class="navbar-right">
+      <div class="navbar-right" x-data>
         <ul>
           <li>
             <a href="#" class="btn btn-cart">
               <i
                 class="fa-solid fa-cart-shopping fa-lg"
                 style="color: #000000"
-              ></i
-            ></a>
+              ></i>
+              <span class="quantity-badge"  x-show="$store.cart.quantitytotal" x-text="$store.cart.quantitytotal"></span>
+            </a>
           </li>
           <li>
             <a href="Shoppinghistory.php" class="btn-signup"
@@ -93,6 +101,92 @@
                 <i class="fa-solid fa-trash-can fa-xl"></i>
               </button>
             </div>
+            <!--  -->
+            <div class="product">
+              <img src="../image/dadar-gulung.png" alt="" width="80px" />
+              <div class="partsproduct">
+                <p>Kue Kering</p>
+                <p>Dadar Gulung</p>
+              </div>
+              <div class="quantity">
+                <button class="btn">+</button>
+                <input type="text" value="1" readonly />
+                <button class="btn">-</button>
+              </div>
+              <p>RP 3.500</p>
+              <button class="btn">
+                <i class="fa-solid fa-trash-can fa-xl"></i>
+              </button>
+            </div>
+            <!--  -->
+            <div class="product">
+              <img src="../image/dadar-gulung.png" alt="" width="80px" />
+              <div class="partsproduct">
+                <p>Kue Kering</p>
+                <p>Dadar Gulung</p>
+              </div>
+              <div class="quantity">
+                <button class="btn">+</button>
+                <input type="text" value="1" readonly />
+                <button class="btn">-</button>
+              </div>
+              <p>RP 3.500</p>
+              <button class="btn">
+                <i class="fa-solid fa-trash-can fa-xl"></i>
+              </button>
+            </div>
+            <!--  -->
+            <div class="product">
+              <img src="../image/dadar-gulung.png" alt="" width="80px" />
+              <div class="partsproduct">
+                <p>Kue Kering</p>
+                <p>Dadar Gulung</p>
+              </div>
+              <div class="quantity">
+                <button class="btn">+</button>
+                <input type="text" value="1" readonly />
+                <button class="btn">-</button>
+              </div>
+              <p>RP 3.500</p>
+              <button class="btn">
+                <i class="fa-solid fa-trash-can fa-xl"></i>
+              </button>
+            </div>
+            <!--  -->
+            <div class="product">
+              <img src="../image/dadar-gulung.png" alt="" width="80px" />
+              <div class="partsproduct">
+                <p>Kue Kering</p>
+                <p>Dadar Gulung</p>
+              </div>
+              <div class="quantity">
+                <button class="btn">+</button>
+                <input type="text" value="1" readonly />
+                <button class="btn">-</button>
+              </div>
+              <p>RP 3.500</p>
+              <button class="btn">
+                <i class="fa-solid fa-trash-can fa-xl"></i>
+              </button>
+            </div>
+            <!--  -->
+            <div class="product">
+              <img src="../image/dadar-gulung.png" alt="" width="80px" />
+              <div class="partsproduct">
+                <p>Kue Kering</p>
+                <p>Dadar Gulung</p>
+              </div>
+              <div class="quantity">
+                <button class="btn">+</button>
+                <input type="text" value="1" readonly />
+                <button class="btn">-</button>
+              </div>
+              <p>RP 3.500</p>
+              <button class="btn">
+                <i class="fa-solid fa-trash-can fa-xl"></i>
+              </button>
+            </div>
+            <!--  -->
           </div>
           <!--  -->
         </div>
@@ -144,7 +238,6 @@
     <!-- cart end -->
 
     <!-- Javascript -->
-    <script src="js/Script.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

@@ -79,15 +79,16 @@ $listsearch = $auth->searchproduct();
           </ul>
         </div>
         <!-- right sec -->
-        <div class="navbar-right">
+        <div class="navbar-right" x-data>
           <ul>
             <li>
               <a href="Cart.php" class="btn btn-cart">
                 <i
                   class="fa-solid fa-cart-shopping fa-lg"
                   style="color: #000000"
-                ></i
-              ></a>
+                ></i>
+              <span class="quantity-badge" x-show="$store.cart.quantitytotal" x-text="$store.cart.quantitytotal"></span>
+            </a>
             </li>
             <li>
               <div class="dropdown">
@@ -104,6 +105,55 @@ $listsearch = $auth->searchproduct();
         </div>
       </div>
       <!-- Navbar end -->
+
+      <!-- Cart Start -->
+        <div class="cart" x-data>
+          <div class="containerproduct">
+            <div class="product">
+              <img :src="$store.cart.items[`Product_image`]" alt="" width="40px" style="border-radius: 10px;"/>
+              <div class="partsproduct">
+                <p>Kue Kering</p>
+                <p>Dadar Gulung</p>
+              </div>
+              <div class="quantity">
+                <button class="btn">+</button>
+                <input type="text" value="1" readonly />
+                <button class="btn">-</button>
+              </div>
+              <p>RP 3.500</p>
+              <button class="btn">
+                <i class="fa-solid fa-trash-can fa-sm"></i>
+              </button>
+            </div>
+          </div>
+          <!-- form payment -->
+          <div class="form">
+            <div class="name">
+              <label>Name:</label>
+              <input type="text">
+            </div>
+
+            <div class="name">
+              <label>Email:</label>
+              <input type="text">
+            </div>
+
+            <div class="name">
+              <label>No.Telephone:</label>
+              <input type="text">
+            </div>
+          </div>
+          <!-- price -->
+          <div class="price">
+            <p>Total Price: <span>RP 1.000.000</span></p>
+          </div>
+          <!-- btn checkout -->
+          <div class="checkout">
+            <button class="btn btn-primary btn-sm">Checkout</button>
+          </div>
+          <!--  -->
+        </div>
+      <!-- Cart End -->
 
       <!-- Home start -->
       <div class="home" id="home">
@@ -155,8 +205,8 @@ $listsearch = $auth->searchproduct();
               <img  :src="p.Product_image" alt="" width="200px" />
               <h5 x-text="p.Product_name"></h5>
               <p x-text="p.Product_category"></p>
-              <p x-text="p.Product_price"></p>
-              <button type="submit" name="addtocart" class="btn btn-add">Add</button>
+              <p x-text="rupiah(p.Product_price)"></p>
+              <a href="#" @click.prevent="$store.cart.add(p)" name="addtocart" class="btn btn-add">Add</a>
             </div>
           </template>
         </div>
