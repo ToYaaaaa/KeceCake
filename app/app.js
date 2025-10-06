@@ -55,11 +55,37 @@ document.addEventListener("alpine:init", () => {
         this.totalprice -= p.Product_price;
       }
     },
+    delete(p) {
+      this.items = this.items.filter((i) => i.Product_id !== p.Product_id);
+      this.quantitytotal -= p.qty;
+      this.totalprice -= p.qty * p.Product_price;
+    },
   });
 });
 
-//konversi ke rupiah untuk harga
+// kirim data ketika tombol checkout di klik
+const checkoutButton = document.querySelector("#button");
+const form = document.querySelector("#form");
+checkoutButton.addEventListener("click", async function (e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const data = new URLSearchParams(formData);
+  const objdata = Object.fromEntries(data);
 
+  //ambil transaction token
+  try {
+    const resp = await fetch("../php/System/Midtrans.php", {
+      method: "POST",
+      body: data,
+    });
+    const token = await resp.text();
+    window.snap.pay(token);
+  } catch (err) {
+    console.log(err.message);
+  }
+});
+
+//konversi ke rupiah untuk harga
 const rupiah = (number) => {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",

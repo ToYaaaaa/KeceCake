@@ -52,13 +52,6 @@
       <!-- right sec -->
       <div class="navbar-right">
         <ul>
-          <li>
-            <a href="Cart.php" class="btn btn-cart">
-              <i
-                class="fa-solid fa-cart-shopping fa-lg"
-                style="color: #000000"
-              ></i
-            ></a>
           </li>
           <li>
             <a href="#" class="btn-signup"

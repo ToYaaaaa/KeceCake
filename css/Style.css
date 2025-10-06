@@ -79,7 +79,8 @@
 /* Cart */
 .cart {
   position: fixed;
-  height: 32rem;
+  height: 33rem;
+  z-index: 999;
   width: 25rem;
   top: 3.6rem;
   right: 0;
@@ -122,13 +123,14 @@
   line-height: 1.3;
 }
 
-.cart .quantity button {
+.cart .quantity .button {
   border: 2px solid black;
   font-size: 0.9rem;
   padding: 0.1rem 0.3rem;
   color: white;
   background-color: black;
 }
+
 .cart .quantity input {
   width: 1.5rem;
   text-align: center;
@@ -153,11 +155,14 @@ label {
   margin: 0rem 1rem 0rem 1rem;
 }
 
+.cart .form label {
+  margin-top: 0.8rem;
+}
+
 .cart .price {
   margin-top: 20px;
   padding: 1rem;
   border-top: 2px solid black;
-  border-bottom: 2px solid black;
   text-align: center;
 }
 
@@ -173,7 +178,15 @@ span {
 .cart .checkout {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 3%;
+}
+
+.cart .checkout .button {
+  background-color: blue;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
+  color: white;
 }
 
 /* Home */

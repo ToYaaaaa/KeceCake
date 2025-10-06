@@ -55,11 +55,16 @@ $listsearch = $auth->searchproduct();
     ></script>
 
     <!-- alphine js -->
-      <script src="../app/app.js"></script>
+      
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+
+    <!-- midtrans -->
+    <script type="text/javascript"
+      src="https://app.sandbox.midtrans.com/snap/snap.js"
+      data-client-key="Mid-client-cUXAP7ft154vIEAm"></script>
   </head>
   <body>
     <div class="containerr">
@@ -122,7 +127,7 @@ $listsearch = $auth->searchproduct();
                 <button class="btn" @click="$store.cart.min(p)">-</button>
               </div>
               <p x-text="rupiah(p.Product_price * p.qty)"></p>
-              <button class="btn">
+              <button class="btn" @click="$store.cart.delete(p)">
                 <i class="fa-solid fa-trash-can fa-sm"></i>
               </button>
               </div>
@@ -130,29 +135,36 @@ $listsearch = $auth->searchproduct();
           </div>
           <!-- form payment -->
           <div class="form">
-            <div class="name">
-              <label>Name:</label>
-              <input type="text">
+            <form action="" id="form" >
+              <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+              <input type="hidden" name="total" x-model="$store.cart.totalprice">
+
+              <div class="name">
+                <label for="name">Name:</label>
+                <input type="text" autocomplete="off" name="name" id="name">
+              </div>
+
+              <div class="name">
+                <label for="email">Email:</label>
+                <input type="text" autocomplete="off" name="email" id="email">
+              </div>
+
+              <div class="name">
+                <label for="telephone">No.Telephone:</label>
+                <input type="number" autocomplete="off" name="telephone" id="telephone">
+              </div>
             </div>
 
-            <div class="name">
-              <label>Email:</label>
-              <input type="text">
+            <!-- btn checkout -->
+            <div class="checkout">
+              <button class="button" type="submit" value="checkout" id="button">Checkout</button>
             </div>
+          </form>
 
-            <div class="name">
-              <label>No.Telephone:</label>
-              <input type="text">
+            <!-- price -->
+            <div class="price">
+              <p>Total Price: <span x-text="rupiah($store.cart.totalprice)">/span></p>
             </div>
-          </div>
-          <!-- price -->
-          <div class="price">
-            <p>Total Price: <span x-text="rupiah($store.cart.totalprice)">/span></p>
-          </div>
-          <!-- btn checkout -->
-          <div class="checkout">
-            <button class="btn btn-primary btn-sm">Checkout</button>
-          </div>
           <!--  -->
         </div>
       <!-- Cart End -->
@@ -297,6 +309,7 @@ $listsearch = $auth->searchproduct();
     </div>
 
     <!-- Javascript -->
+    <script src="../app/app.js"></script>
     <script src="../js/Script.js"></script>
     <!-- Bootstrap js -->
     <script
