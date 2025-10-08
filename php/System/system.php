@@ -292,6 +292,59 @@ class Database {
         }
     }
 
+    //``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+
+    //Order section
+    
+    // insert orders
+public function insertOrders($order_id, $total_price, $order_status, $transaction_time, $payment_type, $customer_name, $customer_email, $customer_phone){
+    //init db
+    $db = $this->connectDb();
+    //query 
+    $sql = "INSERT INTO orders 
+    (Order_id, Total_price, Order_status, Transaction_time, payment_type, Customer_name, Customer_email, Customer_phone)
+    VALUES (:Order_id, :Total_price, :Order_status, :Transaction_time, :Payment_type, :Customer_name, :Customer_email, :Customer_phone)";
+    
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':Order_id', $order_id);
+    $stmt->bindParam(':Total_price', $total_price);
+    $stmt->bindParam(':Order_status', $order_status);
+    $stmt->bindParam(':Payment_type', $payment_type);
+    $stmt->bindParam(':Transaction_time', $transaction_time);
+    $stmt->bindParam(':Customer_name', $customer_name);
+    $stmt->bindParam(':Customer_email', $customer_email);
+    $stmt->bindParam(':Customer_phone', $customer_phone);
+
+    try {
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Error insert order: " . $e->getMessage();
+    }
+}
+
+// insert detail item
+public function insertOrdersItem($order_id, $product_id, $product_name, $price, $quantity){
+    //init db
+    $db = $this->connectDb();
+    //query
+    $sql = "INSERT INTO order_items 
+        (Order_id, Product_id, Product_name, Price, Quantity)
+        VALUES (:Order_id, :Product_id, :Product_name, :Price, :Quantity)";
+    
+    $stmt = $db->prepare($sql);
+    $stmt->bindParam(':Order_id', $order_id);
+    $stmt->bindParam(':Product_id', $product_id);
+    $stmt->bindParam(':Product_name', $product_name);
+    $stmt->bindParam(':Price', $price);
+    $stmt->bindParam(':Quantity', $quantity);
+
+    try {
+        $stmt->execute();
+    } catch (PDOException $e) {
+        echo "Error insert order item: " . $e->getMessage();
+    }
+}
+
 }
 
 // buat object db

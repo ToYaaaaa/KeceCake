@@ -79,7 +79,47 @@ checkoutButton.addEventListener("click", async function (e) {
       body: data,
     });
     const token = await resp.text();
-    window.snap.pay(token);
+    window.snap.pay(token, {
+      onSuccess: function (result) {
+        console.log("success", result);
+
+        // Tambahin data customer & cart items manual
+        result.customer_details = {
+          first_name: objdata.name,
+          email: objdata.email,
+          phone: objdata.telephone,
+        };
+
+        result.item_detail = Alpine.store("cart").items.map((p) => ({
+          product_id: p.Product_id,
+          name: p.Product_name,
+          price: p.Product_price,
+          quantity: p.qty,
+        }));
+
+        // kirim data ke notification.php
+        fetch("../php/System/notification.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(result),
+        })
+          .then((res) => res.text())
+          .then((text) => {
+            console.log("Raw response:", text);
+            try {
+              let json = JSON.parse(text);
+              console.log("Parsed JSON:", json);
+            } catch (e) {
+              console.error("Invalid JSON", e);
+            }
+          });
+
+        // reset cart setelah berhasil
+        Alpine.store("cart").items = [];
+        Alpine.store("cart").quantitytotal = 0;
+        Alpine.store("cart").totalprice = 0;
+      },
+    });
   } catch (err) {
     console.log(err.message);
   }
