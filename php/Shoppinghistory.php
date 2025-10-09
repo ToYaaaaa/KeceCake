@@ -1,3 +1,13 @@
+<?php
+require "System/system.php";
+
+//ambil list order
+$listorder = $auth->getorders();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,6 +41,12 @@
     <script
       src="https://kit.fontawesome.com/2fbd2eb978.js"
       crossorigin="anonymous"
+    ></script>
+
+    <!-- alpine -->
+     <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
   </head>
   <body>
@@ -69,26 +85,27 @@
         <h2>Shopping History</h2>
         <div class="containerproduct">
           <!--  -->
+        <?php foreach($listorder as $hasillistorder): ?>
           <div class="product">
             <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-xl"
-                style="color: #63e6be"
-              ></i>
+              <p><?= $hasillistorder["Order_status"]?></p>
             </div>
             <div class="Datecheckout">
-              <p>04/11/2025</p>
+              <p><?= $hasillistorder["Transaction_time"]?></p>
             </div>
             <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
+              <p>Total Price: RP.<span><?= $hasillistorder["Total_price"]?></span></p>
             </div>
             <div class="button">
-              <a href="Invoice.php" class="btn btn-primary">Detail</a>
+              <form action="" method="get">
+                <a href="Invoice.php?id=<?= $hasillistorder["Order_id"] ?>" class="btn btn-primary">Details</a>
+              </form>
               <button class="btn">
                 <i class="fa-solid fa-trash-can fa-xl"></i>
               </button>
             </div>
           </div>
+        <?php endforeach; ?>
           <!--  -->
         </div>
       </div>
@@ -96,7 +113,7 @@
     <!-- History shopping end -->
 
     <!-- Javascript -->
-    <script src="js/Script.js"></script>
+    <script src="../app/app.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

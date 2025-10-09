@@ -1,3 +1,29 @@
+<?php
+  require "System/system.php";
+
+  //get db
+  $db = $auth->connectDb();
+
+ //ambil id dari url
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    //ambil dta orders
+    $stmtorders = $db->prepare("SELECT * FROM orders WHERE Order_id = :id");
+    $stmtorders->bindParam(":id", $id, PDO::PARAM_INT);
+    $stmtorders->execute();
+    $orders = $stmtorders->fetch(PDO::FETCH_ASSOC);
+
+    //ambil dta orders
+    $stmtitemorders = $db->prepare("SELECT * FROM order_items WHERE Order_id = :id");
+    $stmtitemorders->bindParam(":id", $id, PDO::PARAM_INT);
+    $stmtitemorders->execute();
+    $orderitem = $stmtitemorders->fetchAll(PDO::FETCH_ASSOC);
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -74,18 +100,20 @@
           ></a>
           <div class="containerproduct">
             <!--  -->
+          <?php foreach($orderitem as $item): ?>
             <div class="product">
-              <img src="../image/dadar-gulung.png" alt="" width="80px" />
+              <img src="<?= $item["Product_image"]?>" alt="" width="80px" />
               <div class="partsproduct">
-                <p>Kue Kering</p>
-                <p>Dadar Gulung</p>
+                <p><?= $item["Product_category"]?></p>
+                <p><?= $item["Product_name"]?></p>
               </div>
-              <p>RP 3.500</p>
+              <p>RP.<?= $item["Price"]?></p>
               <div class="quantity">
                 <h5>Total Item:</h5>
-                <input type="text" value="1" readonly />
+                <input type="text" value="<?= $item["Quantity"]?>" readonly />
               </div>
             </div>
+          <?php endforeach; ?>
           <!--  -->
           </div>
         </div>
@@ -95,12 +123,15 @@
           <div class="top">
             <img src="../image/success.png" alt="" width="150px" />
             <h5>Payment Success</h5>
+            <h5>Order Id: <?= $orders["Order_id"]?></h5>
           </div>
           <div class="status">
-            <p>Status: <span>Send</span></p>
+            <p>Status: <span><?= $orders["Order_status"]?></span></p>
+            <p>Payment Time: <span><?= $orders["Transaction_time"]?></span></p>
+            <p>Payment Method: <span><?= $orders["Payment_type"]?></span></p>
           </div>
           <div class="price">
-            <p>Total Price: <span>RP 1.000.000</span></p>
+            <p>Total Price: RP.<span><?= $orders["Total_price"]?></span></p>
           </div>
         </div>
       </div>

@@ -322,18 +322,20 @@ public function insertOrders($order_id, $total_price, $order_status, $transactio
     }
 }
 
-// insert detail item
-public function insertOrdersItem($order_id, $product_id, $product_name, $price, $quantity){
+    // insert detail item
+public function insertOrdersItem($order_id, $product_id,$category, $image, $product_name, $price, $quantity){
     //init db
     $db = $this->connectDb();
     //query
     $sql = "INSERT INTO order_items 
-        (Order_id, Product_id, Product_name, Price, Quantity)
-        VALUES (:Order_id, :Product_id, :Product_name, :Price, :Quantity)";
+        (Order_id, Product_id, Product_category, Product_image, Product_name, Price, Quantity)
+        VALUES (:Order_id, :Product_id, :Product_category, :Product_image, :Product_name, :Price, :Quantity)";
     
     $stmt = $db->prepare($sql);
     $stmt->bindParam(':Order_id', $order_id);
     $stmt->bindParam(':Product_id', $product_id);
+    $stmt->bindParam(':Product_category', $category);
+    $stmt->bindParam(':Product_image', $image);
     $stmt->bindParam(':Product_name', $product_name);
     $stmt->bindParam(':Price', $price);
     $stmt->bindParam(':Quantity', $quantity);
@@ -344,6 +346,32 @@ public function insertOrdersItem($order_id, $product_id, $product_name, $price, 
         echo "Error insert order item: " . $e->getMessage();
     }
 }
+
+    //get data orders
+    public function getorders()
+        {
+        // Init
+        $db = $this->connectDb();
+        // Fetch query
+        $query = "SELECT * FROM orders";
+        // Get the result
+        //query digunakan untuk menjalankan perintah SELECT dan mendapatkan hasilnya langsung.
+        $results = $db->query($query);
+        return $results;
+        }
+
+    //get data item yang di order
+    public function getordersitem()
+        {
+        // Init
+        $db = $this->connectDb();
+        // Fetch query
+        $query = "SELECT * FROM order_items";
+        // Get the result
+        //query digunakan untuk menjalankan perintah SELECT dan mendapatkan hasilnya langsung.
+        $results = $db->query($query);
+        return $results;
+        }
 
 }
 

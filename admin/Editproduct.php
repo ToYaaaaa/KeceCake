@@ -4,6 +4,7 @@ require "../php/System/system.php";
 //get db
 $db = $auth->connectDb();
 
+//ambil id dari url
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $stmt = $db->prepare("SELECT * FROM product WHERE Product_id = :id");
@@ -79,7 +80,7 @@ $auth->insertproduct();
     <div class="containerr">
       <div class="addproduct">
         <div class="top">
-          <a href="Listproduct.html"
+          <a href="Listproduct.php"
             ><i
               class="fa-solid fa-circle-left fa-2xl"
               style="color: #000000"

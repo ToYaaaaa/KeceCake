@@ -39,6 +39,8 @@ if ($order_status == 'settlement' || $order_status == 'capture') {
             $auth->insertOrdersItem(
                 $order_id,
                 $item['product_id'],
+                $item['category'],
+                $item['image'],
                 $item['name'],
                 $item['price'],
                 $item['quantity']
