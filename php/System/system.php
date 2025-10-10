@@ -373,6 +373,32 @@ public function insertOrdersItem($order_id, $product_id,$category, $image, $prod
         return $results;
         }
 
+    //edit status orders
+    public function editorders(){
+    $db = $this->connectDb();
+    if(isset($_POST['editstatus'])){
+        // ambil id primary key dari hidden input
+        $id = $_POST["id"];
+        // status baru
+        $status = $_POST["category"];
+
+        $stmt = $db->prepare("UPDATE orders 
+            SET Order_status = :order_status
+            WHERE id = :id");
+        $stmt->bindParam(":order_status", $status);
+        $stmt->bindParam(":id", $id);
+        try {
+            $stmt->execute();
+            header("Location: " . $_SERVER['PHP_SELF']);
+            //exit setelah selesai
+            exit;
+
+        } catch (PDOException $e) {
+            echo "error at " . $e;
+        }
+    }
+}
+
 }
 
 // buat object db

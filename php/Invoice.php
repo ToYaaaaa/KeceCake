@@ -121,8 +121,8 @@ if (isset($_GET['id'])) {
         <div class="rightsec">
           <h2>Receipt</h2>
           <div class="top">
-            <img src="../image/success.png" alt="" width="150px" />
-            <h5>Payment Success</h5>
+            <img src="../image/icon_invoice.png" alt="" width="150px" />
+            <h5>Payment <span><?= $orders["Order_status"]?></span></h5>
             <h5>Order Id: <?= $orders["Order_id"]?></h5>
           </div>
           <div class="status">

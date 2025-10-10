@@ -19,8 +19,8 @@ $customer_phone = $data['customer_details']['phone'] ?? "-";
 // item detail
 $items = $data['item_detail'] ?? [];
 
+
 // masukin ke DB kalau udah sukses bayar
-if ($order_status == 'settlement' || $order_status == 'capture') {
     try {
         // insert ke orders
         $auth->insertOrders(
@@ -52,4 +52,3 @@ if ($order_status == 'settlement' || $order_status == 'capture') {
         http_response_code(500);
         echo json_encode(["status" => "error", "msg" => $e->getMessage()]);
     }
-}

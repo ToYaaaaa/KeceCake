@@ -1,3 +1,18 @@
+<?php
+require "../php/System/system.php";
+
+//pakai function get orders
+
+$listorder = $auth->getorders();
+
+//pakai function edit orders
+$auth->editorders();
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -57,243 +72,41 @@
       <div class="containerhistory">
         <h2>List History</h2>
         <div class="listhistory">
+          <?php foreach($listorder as $hasillistorder): ?>
           <div class="history">
             <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-2xl"
-                style="color: #63e6be"
-              ></i>
+              <p><?= $hasillistorder["Order_status"]?></p>
             </div>
             <div class="datecheckout">
-              <p>22/12/2025</p>
+              <p><?= $hasillistorder["Transaction_time"]?></p>
             </div>
             <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
+              <p>Total Price: <span>RP.<?= $hasillistorder["Total_price"]?></span></p>
             </div>
             <div class="button">
-              <div class="input-group">
-                <select
-                  class="form-select"
-                  id="inputGroupSelect04"
-                  aria-label="Example select with button addon"
-                >
-                  <option selected>Choose...</option>
-                  <option value="1">Packed</option>
-                  <option value="2">Send</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button">
-                  Save
-                </button>
+                  <form action="" method="post">
+                <!-- pakai id dari tabel (auto increment) -->
+                <input type="hidden" name="id" value="<?= $hasillistorder["id"]?>">
+                <div class="input-group">
+                  <select
+                    class="form-select"
+                    id="inputGroupSelect04"
+                    aria-label="Example select with button addon"
+                    name="category"
+                  >
+                    <option disabled selected><?= $hasillistorder["Order_status"]?></option>
+                    <option value="settlement">Settlement</option>
+                    <option value="pending">Pending</option>
+                  </select>
+                  <!-- kasih name="editstatus" biar ke-detect di PHP -->
+                  <button class="btn btn-outline-secondary" type="submit" name="editstatus">
+                    Save
+                  </button>
+                </div>
+              </form>
               </div>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
           </div>
-
-          <div class="history">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-2xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="datecheckout">
-              <p>22/12/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <div class="input-group">
-                <select
-                  class="form-select"
-                  id="inputGroupSelect04"
-                  aria-label="Example select with button addon"
-                >
-                  <option selected>Choose...</option>
-                  <option value="1">Packed</option>
-                  <option value="2">Send</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button">
-                  Save
-                </button>
-              </div>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="history">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-2xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="datecheckout">
-              <p>22/12/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <div class="input-group">
-                <select
-                  class="form-select"
-                  id="inputGroupSelect04"
-                  aria-label="Example select with button addon"
-                >
-                  <option selected>Choose...</option>
-                  <option value="1">Packed</option>
-                  <option value="2">Send</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button">
-                  Save
-                </button>
-              </div>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="history">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-2xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="datecheckout">
-              <p>22/12/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <div class="input-group">
-                <select
-                  class="form-select"
-                  id="inputGroupSelect04"
-                  aria-label="Example select with button addon"
-                >
-                  <option selected>Choose...</option>
-                  <option value="1">Packed</option>
-                  <option value="2">Send</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button">
-                  Save
-                </button>
-              </div>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="history">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-2xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="datecheckout">
-              <p>22/12/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <div class="input-group">
-                <select
-                  class="form-select"
-                  id="inputGroupSelect04"
-                  aria-label="Example select with button addon"
-                >
-                  <option selected>Choose...</option>
-                  <option value="1">Packed</option>
-                  <option value="2">Send</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button">
-                  Save
-                </button>
-              </div>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="history">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-2xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="datecheckout">
-              <p>22/12/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <div class="input-group">
-                <select
-                  class="form-select"
-                  id="inputGroupSelect04"
-                  aria-label="Example select with button addon"
-                >
-                  <option selected>Choose...</option>
-                  <option value="1">Packed</option>
-                  <option value="2">Send</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button">
-                  Save
-                </button>
-              </div>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="history">
-            <div class="status">
-              <i
-                class="fa-solid fa-circle-check fa-2xl"
-                style="color: #63e6be"
-              ></i>
-            </div>
-            <div class="datecheckout">
-              <p>22/12/2025</p>
-            </div>
-            <div class="price">
-              <p>Total Price: <span>RP 500.000</span></p>
-            </div>
-            <div class="button">
-              <div class="input-group">
-                <select
-                  class="form-select"
-                  id="inputGroupSelect04"
-                  aria-label="Example select with button addon"
-                >
-                  <option selected>Choose...</option>
-                  <option value="1">Packed</option>
-                  <option value="2">Send</option>
-                </select>
-                <button class="btn btn-outline-secondary" type="button">
-                  Save
-                </button>
-              </div>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
-            </div>
-          </div>
+          <?php endforeach;?>
           <!--  -->
         </div>
       </div>

@@ -133,6 +133,80 @@ checkoutButton.addEventListener("click", async function (e) {
         Alpine.store("cart").quantitytotal = 0;
         Alpine.store("cart").totalprice = 0;
       },
+      onPending: function (result) {
+        console.log("pending", result);
+
+        // tambahin data customer manual
+        result.customer_details = {
+          first_name: objdata.name,
+          email: objdata.email,
+          phone: objdata.telephone,
+        };
+
+        // tambahin data item manual
+        result.item_detail = Alpine.store("cart").items.map((p) => ({
+          product_id: p.Product_id,
+          category: p.Product_category,
+          image: p.Product_image,
+          name: p.Product_name,
+          price: p.Product_price,
+          quantity: p.qty,
+        }));
+
+        // kirim ke backend (notification.php)
+        fetch("../php/System/notification.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(result),
+        })
+          .then((res) => res.text())
+          .then((text) => {
+            console.log("Raw response:", text);
+            try {
+              let json = JSON.parse(text);
+              console.log("Parsed JSON:", json);
+            } catch (e) {
+              console.error("Invalid JSON", e);
+            }
+          });
+      },
+      onClose: function (result) {
+        console.log("pending", result);
+
+        // tambahin data customer manual
+        result.customer_details = {
+          first_name: objdata.name,
+          email: objdata.email,
+          phone: objdata.telephone,
+        };
+
+        // tambahin data item manual
+        result.item_detail = Alpine.store("cart").items.map((p) => ({
+          product_id: p.Product_id,
+          category: p.Product_category,
+          image: p.Product_image,
+          name: p.Product_name,
+          price: p.Product_price,
+          quantity: p.qty,
+        }));
+
+        // kirim ke backend (notification.php)
+        fetch("../php/System/notification.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(result),
+        })
+          .then((res) => res.text())
+          .then((text) => {
+            console.log("Raw response:", text);
+            try {
+              let json = JSON.parse(text);
+              console.log("Parsed JSON:", json);
+            } catch (e) {
+              console.error("Invalid JSON", e);
+            }
+          });
+      },
     });
   } catch (err) {
     console.log(err.message);
