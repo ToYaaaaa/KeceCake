@@ -62,9 +62,9 @@ $listsearch = $auth->searchproduct();
     ></script>
 
     <!-- midtrans -->
-    <!-- <script type="text/javascript"
+    <script type="text/javascript"
       src="https://app.sandbox.midtrans.com/snap/snap.js"
-      data-client-key="Mid-client-cUXAP7ft154vIEAm"></script> -->
+      data-client-key="Mid-client-cUXAP7ft154vIEAm"></script>
   </head>
   <body>
     <div class="containerr">

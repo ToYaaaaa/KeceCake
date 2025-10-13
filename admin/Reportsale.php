@@ -13,7 +13,7 @@
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
-
+    <!-- css report sale -->
     <link rel="stylesheet" href="../css/Admin/Reportsale.css" />
 
     <!-- Font -->
@@ -53,11 +53,46 @@
     <!-- Navbar end -->
 
     <!-- Report sale start -->
-    <div class="containerr"></div>
-    <!-- Report sale end -->
+    <body>
+      <div class="containerr">
+        <div class="top">
+          <div class="text">
+            <h1>Report Sale</h1>
+          </div>
+          <div class="laporan">
+            <div class="pendapatanbulanan">
+              <p>Pendapatan Bulanan:</p>
+              <p>RP. 200000</p>
+            </div>
+            <div class="pendapatanharian">
+              <p>Pendapatan Harian:</p>
+              <p>RP. 23242342</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="middle">
+          <div class="orders">
+            <canvas id="graphicorderharian" width="400" height="150"></canvas>
+          </div>
+        </div>
+
+        <div class="bottom">
+
+          <div class="order">
+            <canvas id="graphicorderbulanan" width="400" height="150"></canvas>
+          </div>
+
+          <div class="ordercake">
+            <canvas id="graphiccakebulanan" width="400" height="150"></canvas>
+          </div>
+
+        </div>
+      </div>
     <!-- Javascript -->
-    <script src="js/Script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/chart-order.js"></script>
+    <script src="../js/chart-cake.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

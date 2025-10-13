@@ -56,14 +56,65 @@
 
 /* Login */
 .containerr {
-  /* background-color: var(--bg_color); */
-  background-image: url("../../image/Login.png");
-  background-position: 0;
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
-  height: 100dvh;
+  /* height: 92dvh; */
+  background-color: var(--bg_color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main page */
+/* top */
+.containerr .top {
+  /* background-color: blue; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.containerr .top .laporan {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  gap: 3rem;
+}
+.containerr .top .laporan .pendapatanbulanan,
+.pendapatanharian {
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 20px;
+  height: 5rem;
+}
+
+/* middle */
+.containerr .middle {
+  /* background-color: black; */
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 2rem;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.containerr .middle .orders {
+  width: 80%;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+/* bottom */
+.containerr .bottom {
+  /* background-color: yellow; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  padding: 2rem;
+}
+.containerr .bottom .order,
+.ordercake {
+  width: 40%;
+  border: 2px solid black;
+  border-radius: 20px;
 }

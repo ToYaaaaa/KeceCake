@@ -399,6 +399,34 @@ public function insertOrdersItem($order_id, $product_id,$category, $image, $prod
     }
 }
 
+    //delete orders and items history
+
+    public function deleteorder(){
+        //init
+        $db = $this->connectDb();
+        if(isset($_POST["deleteorders"])){
+            // init var
+            $id = $_POST["order_id"];
+            
+            //delete orders
+            // Prepared digunakan untuk meningkatkan keamanan dan efisiensi saat menjalankan query SQL, terutama ketika menerima input dari pengguna
+            $statement = $db->prepare("DELETE FROM orders WHERE Order_id = $id");
+
+            //delete items
+            $stmt = $db->prepare("DELETE FROM order_items WHERE Order_id = $id");
+            try {
+                $statement->execute();
+                $stmt->execute();
+                //reload data dari DB, bukan data lama
+                header("Location: " . $_SERVER['PHP_SELF']);
+                //exit setelah selesai
+                exit;
+
+            } catch (PDOException $e) {
+                echo "error dibagian" . $e;
+            }
+        }
+    }
 }
 
 // buat object db

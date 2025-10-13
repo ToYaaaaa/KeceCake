@@ -75,7 +75,7 @@ $auth->editorders();
           <?php foreach($listorder as $hasillistorder): ?>
           <div class="history">
             <div class="status">
-              <p><?= $hasillistorder["Order_status"]?></p>
+              <p><?= $hasillistorder["Customer_name"]?></p>
             </div>
             <div class="datecheckout">
               <p><?= $hasillistorder["Transaction_time"]?></p>

@@ -4,6 +4,9 @@ require "System/system.php";
 //ambil list order
 $listorder = $auth->getorders();
 
+//ambil delete function for orders
+$auth->deleteorder();
+
 ?>
 
 
@@ -100,9 +103,12 @@ $listorder = $auth->getorders();
               <form action="" method="get">
                 <a href="Invoice.php?id=<?= $hasillistorder["Order_id"] ?>" class="btn btn-primary">Details</a>
               </form>
-              <button class="btn">
-                <i class="fa-solid fa-trash-can fa-xl"></i>
-              </button>
+              <form action="" method="post">
+                <input type="hidden" name="order_id" value="<?= $hasillistorder["Order_id"] ?>">
+                <button class="btn" name="deleteorders">
+                  <i class="fa-solid fa-trash-can fa-xl"></i>
+                </button>
+              </form>
             </div>
           </div>
         <?php endforeach; ?>
