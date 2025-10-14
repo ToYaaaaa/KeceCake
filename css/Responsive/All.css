@@ -10,6 +10,11 @@
   /* navbar */
   .navbar {
     width: 100dvw;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
   }
 
   /* navbar left */
@@ -19,17 +24,17 @@
 
   /* navbar middle */
   .navbar .navbar-middle {
+    position: fixed;
+    top: 3.6rem;
+    right: -200px;
     background-color: rgba(255, 247, 247, 0.7);
     border-left: 1px solid white;
     border-bottom: 1px solid white;
     box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
-    width: 35dvw;
+    width: 140px;
     font-weight: bold;
-    position: absolute;
-    right: -150px;
-    top: 3.6rem;
-    display: block;
     transition: right ease 0.5s;
+    z-index: 999; /* biar di atas elemen lain */
   }
   .navbar .navbar-middle.active {
     right: 0;
@@ -67,6 +72,62 @@
   }
   .home .rightsec img {
     width: 300px;
+  }
+
+  /* about us */
+  .aboutus {
+    width: 100dvw;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .aboutus .rightsec {
+    text-align: center;
+    width: 90dvw;
+  }
+
+  .aboutus .leftsec img {
+    width: 300px;
+  }
+
+  /* our product */
+  .ourproduct {
+    width: 100dvw;
+    height: 100dvh;
+  }
+
+  .ourproduct .topproduct {
+    width: 55%;
+    height: 2.5rem;
+    text-align: center;
+    display: flex;
+  }
+
+  .ourproduct .produk {
+    gap: 4rem;
+    margin-top: 2rem;
+    height: 80dvh;
+    width: 95dvw;
+  }
+
+  .ourproduct .produk .menu {
+    height: 300px;
+    width: 160px;
+  }
+  .ourproduct .produk .menu img {
+    width: 100px;
+  }
+  .ourproduct .produk .menu h5 {
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  .ourproduct .produk .menu .btn-add {
+    background-color: var(--primary_btn);
+    color: white;
+    font-weight: bold;
   }
 
   /* kritik & saran */

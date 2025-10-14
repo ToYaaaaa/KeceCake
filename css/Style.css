@@ -270,19 +270,11 @@ span {
 }
 
 .ourproduct .topproduct {
-  /* background-color: blue; */
   width: 15%;
   height: 2.5rem;
   text-align: center;
   display: flex;
 }
-
-/* .ourproduct .topproduct .input-group {
-  height: 2rem;
-  width: 50%;
-  padding: 0;
-  margin: 0;
-} */
 
 .ourproduct .produk {
   width: 100%;
