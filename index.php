@@ -36,7 +36,7 @@ $listsearch = $auth->searchproduct();
     />
 
     <link rel="stylesheet" href="css/Style.css" />
-    <link rel="stylesheet" href="css/Responsive/All.css">
+    <link rel="stylesheet" href="css/Responsive/index.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

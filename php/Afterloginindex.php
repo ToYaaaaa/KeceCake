@@ -36,6 +36,7 @@ $listsearch = $auth->searchproduct();
     />
 
     <link rel="stylesheet" href="../css/Style.css" />
+    <link rel="stylesheet" href="../css/Responsive/afterloginindex.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,19 +76,21 @@ $listsearch = $auth->searchproduct();
           <div class="navbar-left"><span>Kece</span>Cake</div>
         </a>
         <!-- middle sec -->
-        <div class="navbar-middle">
+        <div id="navlist" class="navbar-middle">
           <ul>
             <a href="#"><li>Home</li></a>
             <a href="#aboutus"><li>About Us</li></a>
             <a href="#ourproduct"><li>Our Product</li></a>
             <a href="#Contactus"><li>Contact Us</li></a>
+            <a href="Shoppinghistory.php"><li>Buying History</li></a>
+            <a href="Logoutuser.php"><li>Log Out</li></a>
           </ul>
         </div>
         <!-- right sec -->
         <div class="navbar-right" x-data>
           <ul>
             <li>
-              <a href="#" id="btncart" class="btn btn-cart">
+              <a href="#" id="btncart" class="btn btn-cart-login">
                 <i
                   class="fa-solid fa-cart-shopping fa-lg"
                   style="color: #000000"
@@ -96,15 +99,7 @@ $listsearch = $auth->searchproduct();
             </a>
             </li>
             <li>
-              <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-regular fa-circle-user fa-xl"></i>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="Shoppinghistory.php">Shopping History</a></li>
-                  <li><a class="dropdown-item" href="Logoutuser.php">Log Out</a></li>
-                </ul>
-              </div>
+              <div id="menu" class="menu"><i class="fa-solid fa-bars fa-2xl"></i><span></span></div>
             </li>
           </ul>
         </div>
@@ -309,6 +304,7 @@ $listsearch = $auth->searchproduct();
     </div>
 
     <!-- Javascript -->
+    <script src="../js/hamburger.js"></script>
     <script src="../app/app.js"></script>
     <script src="../js/Script.js"></script>
     <!-- Bootstrap js -->

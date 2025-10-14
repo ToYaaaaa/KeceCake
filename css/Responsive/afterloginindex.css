@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+  box-sizing: border-box;
+}
+
+/* Mobile Portrait and Landscape (up to 480px) */
+@media only screen and (max-width: 480px) {
+  /* navbar */
+  .navbar {
+    width: 100dvw;
+    position: fixed;
+    justify-content: space-around;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+  }
+
+  /* navbar left */
+  .navbar .navbar-left {
+    font-size: 1.3rem;
+  }
+
+  /* navbar middle */
+  .navbar .navbar-middle {
+    position: fixed;
+    top: 3.6rem;
+    right: -200px;
+    background-color: rgba(255, 247, 247, 0.7);
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 150px;
+    font-weight: bold;
+    transition: right ease 0.5s;
+    z-index: 999;
+  }
+  .navbar .navbar-middle.active {
+    right: 0;
+  }
+  .navbar .navbar-middle ul li {
+    margin-top: 0.8rem;
+    padding: 6px;
+  }
+
+  /* navbar right */
+  .navbar .navbar-right {
+    width: 100px;
+    align-items: center;
+  }
+  .navbar .navbar-right ul li {
+    padding-left: 0;
+  }
+  .navbar .navbar-right ul li .menu {
+    display: block;
+  }
+
+  /* cart */
+  .cart {
+    width: 20rem;
+  }
+
+  /* home */
+
+  .home {
+    width: 100dvw;
+    height: 94dvh;
+    flex-wrap: wrap;
+    flex-flow: column-reverse;
+    justify-content: center;
+    gap: 20px;
+  }
+  .home .leftsec {
+    text-align: center;
+    width: 90dvw;
+  }
+  .home .rightsec img {
+    width: 300px;
+  }
+
+  /* about us */
+  .aboutus {
+    width: 100dvw;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .aboutus .rightsec {
+    text-align: center;
+    width: 90dvw;
+  }
+
+  .aboutus .leftsec img {
+    width: 300px;
+  }
+
+  /* our product */
+  .ourproduct {
+    width: 100dvw;
+    height: 100dvh;
+  }
+
+  .ourproduct .topproduct {
+    width: 55%;
+    height: 2.5rem;
+    text-align: center;
+    display: flex;
+  }
+
+  .ourproduct .produk {
+    gap: 3rem;
+    margin-top: 1rem;
+    height: 80dvh;
+    width: 95dvw;
+  }
+
+  .ourproduct .produk .menu {
+    height: 300px;
+    width: 160px;
+  }
+  .ourproduct .produk .menu img {
+    width: 100px;
+  }
+  .ourproduct .produk .menu h5 {
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  .ourproduct .produk .menu .btn-add {
+    background-color: var(--primary_btn);
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Contact us */
+  .Contactus {
+    width: 100dvw;
+    height: 100dvh;
+  }
+
+  .Contactus .formsection {
+    display: flex;
+    margin-top: 0;
+    flex-direction: column;
+    height: 80dvh;
+  }
+  .Contactus h1 {
+    padding-top: 3.6rem;
+  }
+
+  .Contactus .rightsection {
+    width: 90%;
+  }
+
+  .Contactus .formsection .btn-add {
+    background-color: var(--primary_btn);
+    color: white;
+    font-weight: bold;
+    width: 10rem;
+  }
+}
+
+/* Mobile Landscape and Tablet Portrait (481px to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+  /* share */
+  .share {
+    display: none;
+  }
+
+  /* top menu */
+  .maincontainer .topmenu .top-menu-left {
+    display: none;
+  }
+  .maincontainer .topmenu .top-menu-right {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* home */
+  .hero .subhero {
+    width: 100%;
+    height: 150px;
+    top: 370px;
+    left: 0;
+  }
+  .hero .subhero .texthome {
+    font-size: 25px;
+  }
+
+  .hero .subhero .faculty {
+    font-size: 20px;
+  }
+
+  /* visimisi */
+  .visimisi {
+    flex-direction: column;
+  }
+  .selectcontact {
+    width: 100%;
+  }
+  .select {
+    display: none;
+  }
+
+  .contact {
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 10px 0px grey;
+    width: 60dvw;
+    margin: auto;
+  }
+
+  /* footer */
+
+  .footer {
+    width: 100%;
+  }
+  .footer .alignnone {
+    display: none;
+  }
+
+  .footer .atas {
+    height: 100px;
+    width: 100%;
+    padding: 0;
+  }
+  .footer .atas ul {
+    position: relative;
+    left: 0;
+    padding-left: 10px;
+    margin-left: 3%;
+    font-size: 12px;
+  }
+
+  .footer .bawah {
+    font-size: 10px;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .footer .bawah .txtbwh {
+    width: 300px;
+    margin-left: 1%;
+    padding: 0;
+  }
+}
+
+/* Tablet Landscape (769px to 1024px) */
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+  /* share */
+  /* .share {
+        display: none;
+    } */
+  /* visimisi */
+  .visimisi {
+    flex-direction: column;
+  }
+  .selectcontact {
+    width: 100%;
+  }
+  .select {
+    display: none;
+  }
+
+  .contact {
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 10px 0px grey;
+    width: 60dvw;
+    margin: auto;
+  }
+}

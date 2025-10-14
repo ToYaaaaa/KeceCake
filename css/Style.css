@@ -42,9 +42,6 @@
   color: var(--primary_btn);
 }
 
-.navbar .navbar-middle .none {
-  display: none;
-}
 .navbar .navbar-middle ul li {
   display: inline-block;
   padding-left: 20px;
@@ -63,7 +60,12 @@
   border: none;
   position: relative;
 }
-.navbar .navbar-right .btn-cart .quantity-badge {
+
+.navbar .navbar-right .btn-cart-login {
+  border: none;
+  position: relative;
+}
+.navbar .navbar-right .btn-cart-login .quantity-badge {
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -95,7 +97,7 @@
   border-bottom: 2px solid black;
   transition: all 0.3s ease;
   opacity: 0;
-  display: hidden;
+  display: none;
 }
 
 .cart.active {
