@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile Portrait and Landscape (up to 480px) */
+@media only screen and (max-width: 480px) {
+  /* navbar */
+  .navbar {
+    display: flex;
+    width: 100dvw;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    height: 3.5rem;
+    align-items: center;
+    box-shadow: 0px 1.4px 2px black;
+  }
+  .navbar .navbar-left {
+    font-size: 1.3rem;
+  }
+
+  .navbar .navbar-middle {
+    position: fixed;
+    display: inline-block;
+    top: 3.6rem;
+    right: -200px;
+    background-color: rgba(255, 247, 247, 0.7);
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 150px;
+    font-weight: bold;
+    transition: right ease 0.5s;
+    z-index: 999;
+  }
+  .navbar .navbar-middle.active {
+    right: 0;
+  }
+  .navbar .navbar-middle ul {
+    padding-left: 1rem;
+  }
+  .navbar .navbar-middle ul li {
+    margin-top: 0.8rem;
+    padding: 6px;
+  }
+
+  .navbar .navbar-right .signup {
+    display: none;
+  }
+
+  /* receipt */
+  .containerr {
+    width: 100dvw;
+    height: 70rem;
+    justify-content: center;
+    align-items: normal;
+    margin-top: 2rem;
+  }
+
+  .containerr .receipt {
+    border: none;
+    width: 90dvw;
+    height: 32rem;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 25px;
+  }
+
+  /* left section */
+  .containerr .receipt .leftsec {
+    width: 90dvw;
+    height: 75rem;
+    border-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .containerr .receipt .leftsec .containerproduct {
+    height: 85%;
+  }
+  .containerr .receipt .leftsec .product {
+    width: 46%;
+    height: 15rem;
+    flex-direction: column;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .containerr .receipt .leftsec .product .partsproduct p {
+    margin-bottom: 0.5px;
+    line-height: 1;
+  }
+
+  /* right section */
+  .containerr .receipt .rightsec {
+    border-radius: 25px;
+    height: 75rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    width: 90dvw;
+  }
+
+  .containerr .rightsec .top {
+    margin: 3rem 0 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* gap: 0.5rem; */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .containerr .rightsec .status {
+    text-align: center;
+    font-size: 1rem;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .containerr .rightsec .status p {
+    margin-bottom: 0.5rem;
+  }
+
+  .receipt .rightsec .price {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .receipt .rightsec .price p,
+  span {
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile Landscape and Tablet Portrait (481px to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+}
+
+/* Tablet Landscape (769px to 1024px) */
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+}

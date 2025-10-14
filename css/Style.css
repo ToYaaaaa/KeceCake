@@ -50,6 +50,9 @@
   padding: 0;
   margin: 0;
 }
+.navbar .navbar-middle-hamburger {
+  display: none;
+}
 
 .navbar .navbar-right ul li {
   display: inline-block;

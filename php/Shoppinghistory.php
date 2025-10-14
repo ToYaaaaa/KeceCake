@@ -28,6 +28,7 @@ $auth->deleteorder();
     />
 
     <link rel="stylesheet" href="../css/Shoppinghistory.css" />
+    <link rel="stylesheet" href="../css/Responsive/Shoppinghistory.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,7 +61,7 @@ $auth->deleteorder();
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
-      <div class="navbar-middle">
+      <div id="navlist" class="navbar-middle">
         <ul>
           <a href="Afterloginindex.php#"><li>Home</li></a>
           <a href="Afterloginindex.php#aboutus"><li>About Us</li></a>
@@ -71,11 +72,11 @@ $auth->deleteorder();
       <!-- right sec -->
       <div class="navbar-right">
         <ul>
+          <li>
+            <a href="#" class="btn-signup signup"><i class="fa-regular fa-circle-user fa-xl"></i></a>
           </li>
           <li>
-            <a href="#" class="btn-signup"
-              ><i class="fa-regular fa-circle-user fa-xl"></i
-            ></a>
+            <div id="menu" class="menu"><i class="fa-solid fa-bars fa-2xl"></i><span></span></div>
           </li>
         </ul>
       </div>
@@ -120,6 +121,7 @@ $auth->deleteorder();
 
     <!-- Javascript -->
     <script src="../app/app.js"></script>
+    <script src="../js/hamburger.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

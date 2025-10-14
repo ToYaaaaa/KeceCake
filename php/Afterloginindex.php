@@ -76,7 +76,16 @@ $listsearch = $auth->searchproduct();
           <div class="navbar-left"><span>Kece</span>Cake</div>
         </a>
         <!-- middle sec -->
-        <div id="navlist" class="navbar-middle">
+        <div class="navbar-middle">
+          <ul>
+            <a href="#"><li>Home</li></a>
+            <a href="#aboutus"><li>About Us</li></a>
+            <a href="#ourproduct"><li>Our Product</li></a>
+            <a href="#Contactus"><li>Contact Us</li></a>
+          </ul>
+        </div>
+            <!-- mobile -->
+        <div id="navlist" class="navbar-middle-hamburger">
           <ul>
             <a href="#"><li>Home</li></a>
             <a href="#aboutus"><li>About Us</li></a>
@@ -97,6 +106,17 @@ $listsearch = $auth->searchproduct();
                 ></i>
               <span class="quantity-badge" x-show="$store.cart.quantitytotal" x-text="$store.cart.quantitytotal"></span>
             </a>
+            </li>
+            <li>
+              <div class="dropdown user">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-circle-user fa-lg" style="color: #000000;"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Shoppinghistory.php">Buying History</a></li>
+                  <li><a class="dropdown-item" href="Logoutuser.php">Log Out</a></li>
+                </ul>
+              </div>
             </li>
             <li>
               <div id="menu" class="menu"><i class="fa-solid fa-bars fa-2xl"></i><span></span></div>

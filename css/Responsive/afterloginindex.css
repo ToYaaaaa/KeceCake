@@ -25,7 +25,12 @@
 
   /* navbar middle */
   .navbar .navbar-middle {
+    display: none;
+  }
+
+  .navbar .navbar-middle-hamburger {
     position: fixed;
+    display: inline-block;
     top: 3.6rem;
     right: -200px;
     background-color: rgba(255, 247, 247, 0.7);
@@ -37,10 +42,13 @@
     transition: right ease 0.5s;
     z-index: 999;
   }
-  .navbar .navbar-middle.active {
+  .navbar .navbar-middle-hamburger.active {
     right: 0;
   }
-  .navbar .navbar-middle ul li {
+  .navbar .navbar-middle-hamburger ul {
+    padding-left: 1rem;
+  }
+  .navbar .navbar-middle-hamburger ul li {
     margin-top: 0.8rem;
     padding: 6px;
   }
@@ -48,6 +56,7 @@
   /* navbar right */
   .navbar .navbar-right {
     width: 100px;
+    gap: 20px;
     align-items: center;
   }
   .navbar .navbar-right ul li {
@@ -55,6 +64,9 @@
   }
   .navbar .navbar-right ul li .menu {
     display: block;
+  }
+  .navbar .navbar-right .user {
+    display: none;
   }
 
   /* cart */

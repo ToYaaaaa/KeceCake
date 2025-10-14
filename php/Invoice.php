@@ -41,6 +41,7 @@ if (isset($_GET['id'])) {
     />
 
     <link rel="stylesheet" href="../css/Invoice.css" />
+    <link rel="stylesheet" href="../css/Responsive/invoice.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,7 +68,7 @@ if (isset($_GET['id'])) {
         <div class="navbar-left"><span>Kece</span>Cake</div>
       </a>
       <!-- middle sec -->
-      <div class="navbar-middle">
+      <div id="navlist" class="navbar-middle">
         <ul>
           <a href="Afterloginindex.php#"><li>Home</li></a>
           <a href="Afterloginindex.php#aboutus"><li>About Us</li></a>
@@ -79,9 +80,12 @@ if (isset($_GET['id'])) {
       <div class="navbar-right">
         <ul>
           <li>
-            <a href="Shoppinghistory.php" class="btn-signup"
+            <a href="Shoppinghistory.php" class="btn-signup signup"
               ><i class="fa-regular fa-circle-user fa-xl"></i
             ></a>
+          </li>
+          <li>
+            <div id="menu" class="menu"><i class="fa-solid fa-bars fa-2xl"></i><span></span></div>
           </li>
         </ul>
       </div>
@@ -139,7 +143,7 @@ if (isset($_GET['id'])) {
     <!-- cart end -->
 
     <!-- Javascript -->
-    <script src="js/Script.js"></script>
+    <script src="../js/hamburger.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

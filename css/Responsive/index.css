@@ -100,14 +100,14 @@
   }
 
   .ourproduct .topproduct {
-    width: 55%;
+    width: 60%;
     height: 2.5rem;
     text-align: center;
     display: flex;
   }
 
   .ourproduct .produk {
-    gap: 4rem;
+    gap: 2rem;
     margin-top: 2rem;
     height: 80dvh;
     width: 95dvw;
