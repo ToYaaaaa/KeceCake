@@ -42,6 +42,9 @@
   color: var(--primary_btn);
 }
 
+.navbar .navbar-middle .none {
+  display: none;
+}
 .navbar .navbar-middle ul li {
   display: inline-block;
   padding-left: 20px;
@@ -74,6 +77,9 @@
 .navbar .navbar-right ul {
   padding: 0;
   margin: 0;
+}
+.navbar .navbar-right ul li .menu {
+  display: none;
 }
 
 /* Cart */
@@ -194,7 +200,6 @@ span {
   width: 100%;
   height: 680px;
   background-color: var(--bg_color);
-  /* background-color: blue; */
   display: flex;
   justify-content: space-around;
   align-items: center;

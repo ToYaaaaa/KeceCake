@@ -36,6 +36,7 @@ $listsearch = $auth->searchproduct();
     />
 
     <link rel="stylesheet" href="css/Style.css" />
+    <link rel="stylesheet" href="css/Responsive/All.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,7 +64,7 @@ $listsearch = $auth->searchproduct();
           <div class="navbar-left"><span>Kece</span>Cake</div>
         </a>
         <!-- middle sec -->
-        <div class="navbar-middle">
+        <div id="navlist" class="navbar-middle">
           <ul>
             <a href="#"><li>Home</li></a>
             <a href="#aboutus"><li>About Us</li></a>
@@ -83,9 +84,10 @@ $listsearch = $auth->searchproduct();
               ></a>
             </li>
             <li>
-              <a href="php/Login.php" class="btn btn-primary btn-signup"
-                >Sign Up</a
-              >
+              <a href="php/Login.php" class="btn btn-primary btn-signup">Sign Up</a>
+            </li>
+            <li>
+              <div id="menu" class="menu"><i class="fa-solid fa-bars fa-lg"></i></div>
             </li>
           </ul>
         </div>
@@ -246,7 +248,7 @@ $listsearch = $auth->searchproduct();
     </div>
 
     <!-- Javascript -->
-    <!-- <script src="js/Script.js"></script> -->
+    <script src="js/hamburger.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
