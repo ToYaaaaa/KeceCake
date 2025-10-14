@@ -130,43 +130,27 @@
     font-weight: bold;
   }
 
-  /* kritik & saran */
+  /* Contact us */
   .Contactus {
-    display: none;
+    width: 100dvw;
+    height: 100dvh;
   }
 
-  /* footer */
-
-  .footer {
-    width: 100%;
-  }
-  .footer .alignnone {
-    display: none;
+  .Contactus .formsection {
+    display: flex;
+    flex-direction: column;
+    height: 74dvh;
   }
 
-  .footer .atas {
-    height: 100px;
-    width: 100%;
-    padding: 0;
-  }
-  .footer .atas ul {
-    position: relative;
-    left: 0;
-    padding-left: 10px;
-    margin-left: 3%;
-    font-size: 12px;
+  .Contactus .rightsection {
+    width: 90%;
   }
 
-  .footer .bawah {
-    font-size: 10px;
-    width: 100%;
-    justify-content: space-evenly;
-  }
-
-  .footer .bawah .txtbwh {
-    width: 300px;
-    margin-left: 1%;
-    padding: 0;
+  .Contactus .formsection .btn-add {
+    background-color: var(--primary_btn);
+    color: white;
+    font-weight: bold;
+    width: 10rem;
   }
 }
 

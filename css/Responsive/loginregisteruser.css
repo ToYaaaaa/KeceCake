@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Mobile Portrait and Landscape (up to 480px) */
+@media only screen and (max-width: 480px) {
+  /* login */
+  .containerr .login {
+    width: 90dvw;
+    height: 25rem;
+  }
+
+  .containerr .login input,
+  label {
+    margin: 0rem 1rem 2rem 1rem;
+    width: 90%;
+  }
+
+  .containerr .login .backbutton {
+    left: 50px;
+    top: 290px;
+  }
+
+  /* register */
+  .containerr .register {
+    width: 90dvw;
+  }
+
+  .containerr .register input,
+  label {
+    margin: 0rem 1rem 2rem 1rem;
+    width: 90%;
+  }
+
+  .containerr .register .backbutton {
+    left: 50px;
+    top: 250px;
+  }
+}
+
+/* Mobile Landscape and Tablet Portrait (481px to 768px) */
+@media only screen and (min-width: 481px) and (max-width: 700px) {
+}
+
+/* Tablet Landscape (769px to 1024px) */
+@media only screen and (min-width: 700px) and (max-width: 1024px) {
+}

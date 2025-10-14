@@ -35,6 +35,7 @@ $auth->insertuser();
     />
 
     <link rel="stylesheet" href="../css/Login.css" />
+    <link rel="stylesheet" href="../css/Responsive/loginregisteruser.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,6 +71,7 @@ $auth->insertuser();
                 id="username"
                 placeholder="username"
                 name="username"
+                autocomplete="off"
                 required
               />
               <label for="username">Username:</label>
@@ -82,6 +84,7 @@ $auth->insertuser();
                 id="password"
                 placeholder="password"
                 name="password"
+                autocomplete="off"
                 required
               />
               <label for="password">Password:</label>

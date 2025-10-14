@@ -45,6 +45,7 @@
               class="form-control"
               id="username"
               placeholder="username"
+              autocomplete="off"
               required
             />
             <label for="username">Username:</label>
@@ -56,6 +57,7 @@
               class="form-control"
               id="password"
               placeholder="password"
+              autocomplete="off"
               required
             />
             <label for="password">Password:</label>

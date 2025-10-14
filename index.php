@@ -190,6 +190,7 @@ $listsearch = $auth->searchproduct();
                 class="form-control"
                 id="name"
                 placeholder="Name"
+                autocomplete="off"
                 required
               />
               <label for="name">Name:</label>
@@ -201,6 +202,7 @@ $listsearch = $auth->searchproduct();
                 class="form-control"
                 id="email"
                 placeholder="email"
+                autocomplete="off"
                 required
               />
               <label for="email">Email:</label>
@@ -208,10 +210,11 @@ $listsearch = $auth->searchproduct();
 
             <div class="form-floating mb-2">
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="nomor"
                 placeholder="number"
+                autocomplete="off"
                 required
               />
               <label for="nomor">No.Telp:</label>
@@ -222,6 +225,7 @@ $listsearch = $auth->searchproduct();
                 class="form-control"
                 placeholder="Leave The Critic and Suggestions Here"
                 id="floatingTextarea"
+                autocomplete="off"
                 required
               ></textarea>
               <label for="floatingTextarea">Message:</label>

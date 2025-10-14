@@ -32,6 +32,7 @@
     />
 
     <link rel="stylesheet" href="../css/Register.css" />
+    <link rel="stylesheet" href="../css/Responsive/loginregisteruser.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -67,6 +68,7 @@
                 id="username"
                 placeholder="username"
                 name="username"
+                autocomplete="off"
                 required
               />
               <label for="username">Username:</label>
@@ -78,6 +80,7 @@
                 class="form-control"
                 id="email"
                 placeholder="email"
+                autocomplete="off"
                 name="email"
                 required
               />
@@ -90,6 +93,7 @@
                 class="form-control"
                 id="password"
                 placeholder="password"
+                autocomplete="off"
                 name="password"
                 required
               />
