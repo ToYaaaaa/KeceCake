@@ -1,3 +1,11 @@
+<?php
+require "../php/System/system.php";
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -62,11 +70,11 @@
           <div class="laporan">
             <div class="pendapatanbulanan">
               <p>Pendapatan Bulanan:</p>
-              <p>RP. 200000</p>
+              <p id="pendapatanBulanan">RP. 200000</p>
             </div>
             <div class="pendapatanharian">
               <p>Pendapatan Harian:</p>
-              <p>RP. 23242342</p>
+              <p id="pendapatanHarian">RP. 23242342</p>
             </div>
           </div>
         </div>
@@ -93,6 +101,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/chart-order.js"></script>
     <script src="../js/chart-cake.js"></script>
+    <script src="../js/reportsale.js"></script>
     <!-- Bootstrap js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

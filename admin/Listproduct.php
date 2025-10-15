@@ -87,7 +87,7 @@ $auth->insertproduct();
               <p><?= $hasillistproduct["Product_name"]?></p>
             </div>
             <div class="price">
-              <p>Price: RP <span><?= $hasillistproduct["Product_price"]?></span></p>
+              <p>Price: RP <span><?= number_format($hasillistproduct["Product_price"], 0, ",", ".")?></span></p>
             </div>
             <div class="button">
               <form action="" method="get">

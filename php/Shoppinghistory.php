@@ -98,7 +98,7 @@ $auth->deleteorder();
               <p><?= $hasillistorder["Transaction_time"]?></p>
             </div>
             <div class="price">
-              <p>Total Price: RP.<span><?= $hasillistorder["Total_price"]?></span></p>
+              <p>Total Price: RP <span><?= number_format($hasillistorder["Total_price"], 0, ",", ".")?></span></p>
             </div>
             <div class="button">
               <form action="" method="get">

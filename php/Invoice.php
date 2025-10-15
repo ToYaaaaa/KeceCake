@@ -111,7 +111,7 @@ if (isset($_GET['id'])) {
                 <p><?= $item["Product_category"]?></p>
                 <p><?= $item["Product_name"]?></p>
               </div>
-              <p>RP.<?= $item["Price"]?></p>
+              <p>RP <?= number_format($item["Price"], 0, ",", ".")?></p>
               <div class="quantity">
                 <h5>Total Item:</h5>
                 <input type="text" value="<?= $item["Quantity"]?>" readonly />
@@ -135,7 +135,7 @@ if (isset($_GET['id'])) {
             <p>Payment Method: <span><?= $orders["Payment_type"]?></span></p>
           </div>
           <div class="price">
-            <p>Total Price: RP.<span><?= $orders["Total_price"]?></span></p>
+            <p>Total Price: RP <span><?= number_format($orders["Total_price"], 0, ",", ".")?></span></p>
           </div>
         </div>
       </div>

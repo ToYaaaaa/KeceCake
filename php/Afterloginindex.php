@@ -113,7 +113,7 @@ $listsearch = $auth->searchproduct();
                   <i class="fa-solid fa-circle-user fa-lg" style="color: #000000;"></i>
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="Shoppinghistory.php">Buying History</a></li>
+                  <li><a class="dropdown-item" href="Shoppinghistory.php">Shopping History</a></li>
                   <li><a class="dropdown-item" href="Logoutuser.php">Log Out</a></li>
                 </ul>
               </div>
@@ -192,7 +192,7 @@ $listsearch = $auth->searchproduct();
             From The Archipelago
           </h1>
           <p>Discover Traditional Cakes for Your Special Moments.</p>
-          <a href="#ourproduct">Our Product</a>
+          <a href="#ourproduct">Buy Now</a>
         </div>
         <div class="rightsec">
           <img id="imagehome" src="../image/Home.png" alt="Contoh Kue" width="300px" />
