@@ -91,7 +91,7 @@ $listsearch = $auth->searchproduct();
             <a href="#aboutus"><li>About Us</li></a>
             <a href="#ourproduct"><li>Our Product</li></a>
             <a href="#Contactus"><li>Contact Us</li></a>
-            <a href="Shoppinghistory.php"><li>Buying History</li></a>
+            <a href="Shoppinghistory.php"><li>Shopping History</li></a>
             <a href="Logoutuser.php"><li>Log Out</li></a>
           </ul>
         </div>

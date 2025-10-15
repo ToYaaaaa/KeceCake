@@ -52,10 +52,11 @@
   /* receipt */
   .containerr {
     width: 100dvw;
-    height: 70rem;
+    height: 100dvh;
     justify-content: center;
     align-items: normal;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
+    padding-top: 2rem;
   }
 
   .containerr .receipt {
@@ -70,13 +71,14 @@
   /* left section */
   .containerr .receipt .leftsec {
     width: 90dvw;
-    height: 75rem;
+    height: 21rem;
+    /* background-color: blue; */
     border-radius: 25px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
   .containerr .receipt .leftsec .containerproduct {
-    height: 85%;
+    height: 74%;
   }
   .containerr .receipt .leftsec .product {
     width: 46%;
