@@ -1,3 +1,23 @@
+<?php
+//connect to system php
+require "../php/System/system.php";
+
+//session start
+session_start();
+
+
+//get login function
+$auth->adminlogin();
+
+//cek if user have login or not 
+  if(isset($_SESSION["Admin_id"])){
+    header("location: Listuseraccount.php");
+    exit;
+  }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +34,8 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="../css/Admin/login.css" />
+    <link rel="stylesheet" href="../css/Login.css" />
+    <link rel="stylesheet" href="../css/Responsive/loginregisteruser.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,33 +58,40 @@
     <!-- Login start -->
     <div class="containerr">
       <div class="login">
-        <h1>Login</h1>
-        <div class="form">
-          <div class="form-floating mb-2">
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              placeholder="username"
-              autocomplete="off"
-              required
-            />
-            <label for="username">Username:</label>
-          </div>
+        <a href="../index.php" class="backbutton"
+          ><i class="fa-solid fa-circle-left fa-2xl" style="color: #000000"></i
+        ></a>
+        <h1>Login Admin</h1>
+        <form action="" method="post">
+          <div class="form">
+            <div class="form-floating mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="Adminname"
+                placeholder="Adminname"
+                name="adminname"
+                autocomplete="off"
+                required
+              />
+              <label for="Adminname">Adminname:</label>
+            </div>
 
-          <div class="form-floating mb-2">
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="password"
-              autocomplete="off"
-              required
-            />
-            <label for="password">Password:</label>
+            <div class="form-floating mb-2">
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="password"
+                name="password"
+                autocomplete="off"
+                required
+              />
+              <label for="password">Password:</label>
+            </div>
           </div>
-        </div>
-        <button class="btn btn-primary">Login</button>
+          <button type="submit" name="login" class="btn btn-primary">Login</button>
+        </form>
       </div>
     </div>
     <!-- Login end -->

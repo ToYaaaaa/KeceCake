@@ -48,6 +48,9 @@
   .navbar .navbar-right .signup {
     display: none;
   }
+  .navbar .navbar-right .menu {
+    display: block;
+  }
 
   /* Riwayat */
   .containerr {

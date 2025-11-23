@@ -54,6 +54,10 @@
   margin: 0;
 }
 
+.navbar .navbar-right .menu {
+  display: none;
+}
+
 /* receipt */
 .containerr {
   width: 100%;

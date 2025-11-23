@@ -1,7 +1,12 @@
 <?php
 require "../php/System/system.php";
+session_start();
 
-
+//cek if user have login or not 
+  if(!isset($_SESSION["Admin_id"])){
+    header("location: Loginadmin.php");
+    exit;
+  }
 
 ?>
 

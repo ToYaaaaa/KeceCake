@@ -180,7 +180,7 @@ class Database {
 
     //``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 
-    //user section
+    //user & admin section
 
     //show user
     public function getuser()
@@ -291,6 +291,42 @@ class Database {
             } 
         }
     }
+
+    //``````````````````````````````````
+    public function adminlogin(){
+        // init db
+        $db = $this->connectDb();
+        //user login
+        if(isset($_POST["login"])){
+            // init var
+            $Adminname = $_POST["adminname"];
+            $password = $_POST["password"];
+            
+
+            $stmt = $db->prepare("SELECT * FROM admin WHERE Adminname = :Adminname AND password = :password");
+            $stmt->bindParam(":Adminname", $Adminname);
+            $stmt->bindParam(":password", $password);
+            $stmt->execute();
+            $cekadmin = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($cekadmin){
+                if($cekadmin["Adminname"] === $Adminname && $cekadmin["password"] === $password){
+                    //session for validation
+                    $_SESSION['Admin_id'] = $cekadmin['Admin_id'];
+                    $_SESSION['Adminname'] = $cekadmin['Adminname'];
+
+                    //redirect to after login
+                    header("Location: ../admin/listuseraccount.php");
+                    //exit setelah selesai
+                    exit;
+                }else{
+                echo "<script>alert('Adminname/Password Wrong');</script>";
+                }
+            }
+        }
+    }
+
+
 
     //``````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
 
@@ -427,6 +463,10 @@ public function insertOrdersItem($order_id, $product_id,$category, $image, $prod
             }
         }
     }
+
+
+
+
 }
 
 // buat object db

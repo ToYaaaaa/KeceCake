@@ -49,6 +49,10 @@
     display: none;
   }
 
+  .navbar .navbar-right .menu {
+    display: block;
+  }
+
   /* receipt */
   .containerr {
     width: 100dvw;

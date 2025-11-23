@@ -22,6 +22,7 @@ try {
     $stmtBulanan->bindParam(':bulan', $bulan);
     $stmtBulanan->bindParam(':tahun', $tahun);
     $stmtBulanan->execute();
+    // ambil 1 kolom aja gak ambil semua
     $totalBulanan = $stmtBulanan->fetchColumn() ?: 0;
 
     // Pendapatan harian
@@ -34,6 +35,7 @@ try {
     $stmtHarian = $db->prepare($queryHarian);
     $stmtHarian->bindParam(':hari', $hari);
     $stmtHarian->execute();
+    // ambil 1 kolom aja gak ambil semua
     $totalHarian = $stmtHarian->fetchColumn() ?: 0;
 
      function ubahrupiah($angka) {
