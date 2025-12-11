@@ -40,10 +40,51 @@
   }
 }
 
-/* Mobile Landscape and Tablet Portrait (481px to 768px) */
-@media only screen and (min-width: 481px) and (max-width: 700px) {
+/* Tablet Landscape (769px to 1024px) */
+@media only screen and (min-width: 700px) and (max-width: 768px) {
+  .containerr .login .backbutton {
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    top: 310px;
+  }
+
+  .containerr .register .backbutton {
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    top: 310px;
+  }
 }
 
-/* Tablet Landscape (769px to 1024px) */
-@media only screen and (min-width: 700px) and (max-width: 1024px) {
+@media only screen and (min-width: 800px) and (max-width: 820px) {
+  .containerr .login .backbutton {
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    top: 390px;
+  }
+
+  .containerr .register .backbutton {
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    top: 390px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) {
+  .containerr .login .backbutton {
+    display: inline-block;
+    position: absolute;
+    left: 250px;
+    top: 490px;
+  }
+
+  .containerr .register .backbutton {
+    display: inline-block;
+    position: absolute;
+    left: 250px;
+    top: 490px;
+  }
 }
